@@ -2,8 +2,8 @@ const Discord = require('discord.js');
 module.exports = {
     config:{
         info:{
-            name:"name",
-            description:"description",
+            name:"NAME",
+            description:"DESCRIPTION",
             permissions:[]
         },
         availability:{
@@ -14,14 +14,6 @@ module.exports = {
         }
     },
     execute:(client, message, args) => {
-        const me=new Discord.MessageEmbed()
-        .setTitle(client.user.username)
-        .setAuthor(client.user.tag, client.user.avatarURL())
-        .addFields(
-            {name:"Prefix:", value:client.config.prefix, inline:true}
-        )
-        .setDescription(client.config.description)
-        .setTimestamp()
-        return message.channel.send(me);
+        // Code
     }
 };
