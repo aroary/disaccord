@@ -149,7 +149,7 @@ ___
 ]
 ```
 ###### core\utilities\status\presences.json
-## Your bot hase a webapp
+## Your bot has a webapp
 ### Some bots need a webapp to keep the bot online, so we started one up for you.
 ```javascript
 const express = require('express');
