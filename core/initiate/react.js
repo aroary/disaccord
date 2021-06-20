@@ -1,11 +1,8 @@
 const Discord = require('discord.js');
 const fs = require('fs');
-
 /**
- * Initializes Client reactions.
  * @param {Discord.Client} client - Your Client
  */
-
 module.exports = (client) => {
     // Define a collection for both reactions
     client.reactions = new Discord.Collection();
@@ -13,10 +10,10 @@ module.exports = (client) => {
     // Read the command directory.
     fs.readdir(`core/bot/client/reactions`, (err, dir) => {
         // If an error occurs, log it to the console and abort command initialization.
-        if (err) return client.log.error(`Could not read directory: ${err.message}`);
+        if(err)return client.log.error(`Could not read directory: ${err.message}`);
 
         // Help command catagories array
-        client.help.reactions=new Map();
+        client.help.reactions = new Map();
 
         // Filter for only JS files and log the amount found.
         const jsFiles = dir.filter(fileName => fileName.split('.').pop() === 'js');

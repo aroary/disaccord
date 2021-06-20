@@ -4,6 +4,11 @@ module.exports = {
         emoji:"",
         permissions:[]
     },
+    /**
+     * @param {Discord.Client} client 
+     * @param {Discord.MessageReaction} reaction 
+     * @param {Discord.User} user 
+     */
     execute:(client, reaction, user) => {
         // Code
     }

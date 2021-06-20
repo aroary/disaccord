@@ -4,7 +4,7 @@ module.exports = {
         info:{
             name:"hi",
             description:"Greatings!",
-            permissions:[]
+            permissions:["SEND_MESSAGES"]
         },
         availability:{
             find:false,
@@ -14,6 +14,6 @@ module.exports = {
         }
     },
     execute:(client, message, args) => {
-        return message.channel.send("Hello!");
+        return message.reply("Hello!");
     }
 };

@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 module.exports = {
     config:{
         info:{
-            name:"NAME",
+            name:"@everyone",
             description:"DESCRIPTION",
             permissions:[]
         },
@@ -10,7 +10,7 @@ module.exports = {
             find:true,
             public:true,
             channel:"all", // all, server, private
-            position:"start" // start, end, include
+            position:"include" // start, end, include
         }
     },
     /**
@@ -19,6 +19,6 @@ module.exports = {
      * @param {Array} args - The message arguments (message.content.split(" ")) 
      */
     execute:(client, message, args) => {
-        // Code
+        client.log.log(message.content);
     }
 };

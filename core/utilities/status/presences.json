@@ -1,4 +1,5 @@
 [
     {"type":"PLAYING", "name":"i guess"},
-    {"type":"PLAYING", "name":"with fire"}
+    {"type":"LISTENING", "name":"{users} users"},
+    {"type":"PLAYING", "name":"in {servers} servers"}
 ]

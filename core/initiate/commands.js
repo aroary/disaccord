@@ -67,7 +67,7 @@ module.exports = (client) => {
                     const embed = new Discord.MessageEmbed()
                     .setTitle(config.name)
                     .setDescription(loaded.length > 0 ? loaded : "Coming soon!")
-                    .setFooter(config.id)
+                    .setFooter(config.id, "https://cdn.discordapp.com/attachments/766316423306805269/855173259255480380/outline-xxl.png")
                     .setTimestamp();
 
                     // Set the help command's command help embeds

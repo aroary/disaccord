@@ -6,7 +6,7 @@ module.exports = {
             usage:"invite",
             description:"invite the bot",
             aliases:[],
-            permissions:[]
+            permissions:["SEND_MESSAGES"]
         },
         availability:{
             find:true,

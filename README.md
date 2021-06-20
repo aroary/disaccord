@@ -1,7 +1,7 @@
 # Disaccord
 > a discord bot *command*, *trigger*, *reaction* handler.
 ## To get started, clone the code to your compiler. Add all your bot information to the `.secrets.json`.
-### your `.settings.json` should look similar to this:
+### your `.secrets.json` should look similar to this:
 ```json
 {
     "token":"TOKEN",
@@ -10,6 +10,7 @@
     "owners":[],
     "developers":[],
     "testers":[],
+    "supportServer":"SUPPORT_SERVER_ID",
     "description":"Just another bot!"
 }
 ```
@@ -43,13 +44,13 @@ module.exports = {
 };
 ```
 > Commands are things that people use to do stuff, for example they send `ping` and the bot responds with `pong`.
-##### info
+##### info:
 * **`name`**: The name of the command, this is what the user sends to execute the command.
 * **`usage`**: example of how to use the command or the required and optional parameters.
 * **`description`**: A description of what the command does.
 * **`aliases`**: *Array* of *Strings* which are other names for the command.
 * **`permissions`**: The permissions the Bot **and** the User need to execute the command.
-##### availability
+##### availability:
 * **`find`**: This *Bool* decides if the command will show up in the help command.
 * **`public`**: This *Bool* will allow anyone to use the command if set to true.
 * **`channel`**: This *String* is set to either `all`, `server`, `private`. If set to `all`, then the command can be used anywhere, if set to `server` then only in a server and if set to `private` than it can only be used in a direct message.
@@ -117,7 +118,7 @@ module.exports = {
 * **`emoji`**: The emoji needed to be used to run the trigger.
 * **`permissions`**: The permissions required to run the trigger.
 ### The execute function will execute when the reaction is triggered.
-> ⚠️ Currently unavailable.
+> #### ⚠️ Currently unavailable.
 ___
 ## Use this template to add events
 ```javascript
@@ -137,9 +138,43 @@ ___
 ## All the template can be found in disaccord/templates
 ### Permissions Array:
 ```json
-[ "ADMINISTRATOR", "CREATE_INSTANT_INVITE", "KICK_MEMBERS", "BAN_MEMBERS", "MANAGE_CHANNELS", "MANAGE_GUILD", "ADD_REACTIONS", "VIEW_AUDIT_LOG", "PRIORITY_SPEAKER", "STREAM", "VIEW_CHANNEL", "SEND_MESSAGES", "SEND_TTS_MESSAGES", "MANAGE_MESSAGES", "EMBED_LINKS", "ATTACH_FILES", "READ_MESSAGE_HISTORY", "MENTION_EVERYONE", "USE_EXTERNAL_EMOJIS", "VIEW_GUILD_INSIGHTS", "CONNECT", "SPEAK", "MUTE_MEMBERS", "DEAFEN_MEMBERS", "MOVE_MEMBERS", "USE_VAD", "CHANGE_NICKNAME", "MANAGE_NICKNAMES", "MANAGE_ROLES", "MANAGE_WEBHOOKS", "MANAGE_EMOJIS" ]
+[
+    "ADMINISTRATOR",
+    "CREATE_INSTANT_INVITE",
+    "KICK_MEMBERS",
+    "BAN_MEMBERS",
+    "MANAGE_CHANNELS",
+    "MANAGE_GUILD",
+    "ADD_REACTIONS",
+    "VIEW_AUDIT_LOG",
+    "PRIORITY_SPEAKER",
+    "STREAM",
+    "VIEW_CHANNEL",
+    "SEND_MESSAGES",
+    "SEND_TTS_MESSAGES",
+    "MANAGE_MESSAGES",
+    "EMBED_LINKS",
+    "ATTACH_FILES",
+    "READ_MESSAGE_HISTORY",
+    "MENTION_EVERYONE",
+    "USE_EXTERNAL_EMOJIS",
+    "VIEW_GUILD_INSIGHTS",
+    "CONNECT",
+    "SPEAK",
+    "MUTE_MEMBERS",
+    "DEAFEN_MEMBERS",
+    "MOVE_MEMBERS",
+    "USE_VAD",
+    "CHANGE_NICKNAME",
+    "MANAGE_NICKNAMES",
+    "MANAGE_ROLES",
+    "MANAGE_WEBHOOKS",
+    "MANAGE_EMOJIS"
+]
 ```
-###### core\bot\server\events
+> ###### core\bot\server\events
+> #### ⚠️ The permissions array checks if the user has all the permissions not one or the other.
+> #### ⚠️ The permissions array checks for permissions for the bot and user.
 ## Be sure to change the status array
 ### Defult:
 ```json
@@ -148,7 +183,25 @@ ___
     {"type":"PLAYING", "name":"with fire"}
 ]
 ```
-###### core\utilities\status\presences.json
+> ###### core\utilities\status\presences.json
+#### You can use these in you `name` parameter to replace with a value:
+* **`{servers}`**: add this to the `name` to replace it with the server count in the status
+* **`{channels}`**: add this to the `name` to replace it with the channel count in the status
+* **`{users}`**: add this to the `name` to replace it with the user count in the status
+### Status types:
+```json
+[
+    "PLAYING",
+    "STREAMING",
+    "LISTENING",
+    "WATCHING",
+    "CUSTOM",
+    "COMPETING"
+]
+```
+> core\constants\activities.json
+#### You can use any of these in the `type` parameter.
+___
 ## Your bot has a webapp
 ### Some bots need a webapp to keep the bot online, so we started one up for you.
 ```javascript
@@ -163,12 +216,14 @@ module.exports = (client) => {
     app.listen(client.secrets.port);
 };
 ```
-###### core\initiate\web.js
+> ###### core\initiate\web.js
 #### You can also use your webapp as a website to have commands and info posted. We are considering adding a template for that as well.
 ___
 > ### If you encounter any problems, errors or you just need help or additional information you can let use know!
->> * [Issues / Bugs](https://github.com/aroary/disaccord/issues)
->> * [Help / Infomation](https://github.com/aroary/disaccord/discussions)
->> * ~~[Our Discord]()~~
->> * ~~[Our Bot]()~~
->>> Thank you for using this handler, it means all this work is going into good use! I hope this explains everything you need to know, if there is anything we left out or can be changed let us know!
+>> * [Issues / Bugs](https://github.com/aroary/disaccord/issues), Github issue report tab.
+>> * [Help / Infomation](https://github.com/aroary/disaccord/discussions), Github repository `README.md` page.
+>> * [Our Discord](https://discord.gg/BHtNSq5bq2), Join our discord for any other info or to test out bots made with this template.
+>> * [Our Bot](https://discord.com/oauth2/authorize?client_id=852018638369062913&scope=bot&permissions=8), This is the invite link for our bot, the most advanced version of this template.
+> ##### Thank you for using this handler, it means all this work is going into good use! I hope this explains everything you need to know, if there is anything we left out or can be changed let us know!
+>> #### Please mention to us any errors or problems, we want to make sure we are bug free!
+>>> ##### @aroary#4444

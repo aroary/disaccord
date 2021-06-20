@@ -6,7 +6,7 @@ module.exports = {
             usage:"help (type | category | command | alias)",
             description:"Get information about the bot",
             aliases:["commands", "triggers", "reactions"],
-            permissions:[]
+            permissions:["SEND_MESSAGES"]
         },
         availability:{
             find:true,
@@ -50,7 +50,7 @@ module.exports = {
                         {name:"Usage", value:command.config.info.usage, inline:false},
                         {name:"Aliases:", value:command.config.info.aliases.length > 0 ? command.config.info.aliases.join(", ") : "No aliases.", inline:false}
                     )
-                    .setFooter(client.config.prefix, client.user.avatarURL())
+                    .setFooter(client.config.prefix, "https://cdn.discordapp.com/attachments/766316423306805269/855158055889010689/keyword-research-xxl.png")
                     .setTimestamp()
                     message.channel.send(commandHelp);
                 };

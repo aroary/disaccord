@@ -1,1 +1,0 @@
-// if message content includes @here or @everyone
