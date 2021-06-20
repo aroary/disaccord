@@ -1,5 +1,9 @@
 [
     {"type":"PLAYING", "name":"i guess"},
     {"type":"LISTENING", "name":"{users} users"},
-    {"type":"PLAYING", "name":"in {servers} servers"}
+    {"type":"PLAYING", "name":"in {servers} servers"},
+    {"type":"PLAYING", "name":"with fire"},
+    {"type":"LISTENING", "name":"you"},
+    {"type":"WATCHING", "name":"your every move"},
+    {"type":"LISTENING", "name":"my GPS"}
 ]

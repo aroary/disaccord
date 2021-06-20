@@ -11,7 +11,6 @@ module.exports = {
         },
         availability:{
             find:false,
-            
             public:false,
             channel:"all",
         }
