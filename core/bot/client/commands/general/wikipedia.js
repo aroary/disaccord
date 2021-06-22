@@ -16,8 +16,9 @@ module.exports = {
     },
     execute:(client, message, args) => {
         if(args[0]){
+            const query = args.join("%20");
             var fetch = require('node-fetch');
-            let url = `https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=${args.join("%20")}`;
+            const url = `https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=${query}`;
             let settings = {method:'get'};
     
             fetch(url, settings)
@@ -27,11 +28,8 @@ module.exports = {
                 const page = pages[0][1];
 
                 var content;
-                if(page.extract.length > 1900){
-                    content = page.extract.slice(0, 1900) + `[...](https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=${args.join("%20")})`;
-                }else{
-                    content = page.extract;
-                };
+                if(page.extract.length > 1900)content = page.extract.slice(0, 1900) + `[...](${url})`;
+                else content = page.extract;
 
                 const w = new Discord.MessageEmbed()
                 .setAuthor(message.author.tag, message.author.avatarURL())
