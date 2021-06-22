@@ -26,7 +26,7 @@ module.exports = {
             var i = 0
             while(sevarity < 4 && i < total){
                 sevarity ++;
-                i += 100;
+                i += 150;
             };
             const data = new Discord.MessageEmbed()
             .setTitle("Ping!")

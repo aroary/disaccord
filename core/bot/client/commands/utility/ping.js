@@ -6,7 +6,7 @@ module.exports = {
             name:"ping",
             usage:"ping",
             description:"ping the bot",
-            aliases:["latency"],
+            aliases:["latency","%"],
             permissions:["SEND_MESSAGES"]
         },
         availability:{
@@ -25,11 +25,11 @@ module.exports = {
             var i = 0
             while(sevarity < 4 && i < total){
                 sevarity ++;
-                i += 100;
+                i += 150;
             };
             const data = new Discord.MessageEmbed()
             .setTitle("Pong!")
-            .setDescription(`‏‏‎‏‏‎‏‏‎‏‏‎ ‎‎${ws} *ws*\n__+${ping}__ *api*\n**${total}** *ms*`)
+            .setDescription(`‏‏‎‏‏‎‏‏‎‏‏‎\` ‎‎${ws}\` *ws*\n__\`+${ping}\`__ *api*\n**\`${total}\`** *ms*`)
             .setThumbnail(bars[sevarity])
             .setFooter("🏓", "https://cdn.discordapp.com/attachments/766316423306805269/855079663415328778/rss-5-xxl.png")
             .setTimestamp();

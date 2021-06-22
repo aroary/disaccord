@@ -64,7 +64,7 @@ module.exports = {
                     if(cmdFile.config.availability.public || client.config.testers.includes(message.author.id)){
                         // check for client permissions (coming soon)
                         cmdFile.execute(client, message, args);
-                        client.log.command(`${message.author.id} executed ${cmdFile.config.info.name.toUpperCase()} args: ${args.length > 0 ? `\n${args.map(el => el).join(', ')}` : 'None.'}`);
+                        client.log.command(`${message.author.username} executed ${cmdFile.config.info.name.toUpperCase()} args: ${args.length > 0 ? `${args.map(el => el).join(', ')}` : 'None.'}`);
                     }else{
                         const a = new MessageEmbed()
                         .setColor('RED')
@@ -101,7 +101,7 @@ module.exports = {
                             if(available.public || client.config.testers.includes(message.author.id)){
                                 // check for client permissions (coming soon)
                                 trigger.execute(client, message, args);
-                                client.log.command(`${message.author.id} triggered ${trigger.config.info.name}`);
+                                client.log.command(`${message.author.username} triggered ${trigger.config.info.name}`);
                             }else return;
                         };
                     };

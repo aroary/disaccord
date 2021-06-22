@@ -1,12 +1,12 @@
 const Discord = require('discord.js');
-const hostData = require("../../../../utilities/host")
+const hostData = require("../../../../utilities/process")
 module.exports = {
     config:{
         info:{
             name:"process",
             usage:"process",
             description:"Get the host specs and performance data",
-            aliases:["host"],
+            aliases:["memory", "cpu"],
             permissions:["SEND_MESSAGES"]
         },
         availability:{
