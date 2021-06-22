@@ -28,8 +28,16 @@ module.exports = {
                 const page = pages[0][1];
 
                 var content;
-                if(page.extract.length > 1900)content = page.extract.slice(0, 1900) + `[...](${url})`;
-                else content = page.extract;
+                if(page.extract){
+                    if(page.extract.length > 1900)content = page.extract.slice(0, 1900) + `[...](${url})`;
+                    else content = page.extract;
+                }else{
+                    const no = new Discord.MessageEmbed()
+                    .setDescription(`No results found for that query\n\`\`\`plaintext\n${args.join(" ")}\`\`\``)
+                    .setTimestamp();
+
+                    return message.channel.send(no);
+                };
 
                 const w = new Discord.MessageEmbed()
                 .setAuthor(message.author.tag, message.author.avatarURL())

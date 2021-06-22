@@ -10,7 +10,7 @@ module.exports = {
         },
         availability:{
             find:true,
-            public:true,
+            public:false,
             channel:"all",
         }
     },
