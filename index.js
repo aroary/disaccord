@@ -1,7 +1,7 @@
 const fs = require("fs");
 const Discord = require('discord.js');
-const Child = require("child_process");
 
+// Logo.
 console.log("\x1b[31m%s\x1b[0m", require("./core/constants/logo.json"));
 
 // Create our client.
