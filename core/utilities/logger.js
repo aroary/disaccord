@@ -5,6 +5,7 @@ const moment = () => {
 module.exports = {
     // Log types
     log:(data) => console.log(`[${moment()}]: ${chalk.black.bgWhite("LOG       ")} ${data}`),
+    web:(data) => console.log(`[${moment()}]: ${chalk.bgBlackBright("WEBAPP    ")} ${data}`),
     command:(data) => console.log(`[${moment()}]: ${chalk.bgMagenta("COMMAND   ")} ${data}`),
     warn:(data) => console.log(`[${moment()}]: ${chalk.black.bgYellow("WARN      ")} ${data}`),
     error:(data) => console.log(`[${moment()}]: ${chalk.bgRed("ERROR     ")} ${data}`),
