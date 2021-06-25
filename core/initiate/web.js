@@ -1,6 +1,9 @@
+const Discord = require('discord.js');
 const express = require('express');
 const app = express();
-
+/**
+ * @param {Discord.Client} client - Your client 
+ */
 module.exports = (client) => {
     app.get('/', (req, res) => {
         if(client.config.supportServer){
@@ -14,5 +17,5 @@ module.exports = (client) => {
     
     // Listen.
     app.listen(client.secrets.port);
-    client.log.log(`App listening at https://localhost:${client.secrets.port}`);
+    client.log.web(`App listening at https://localhost:${client.secrets.port}`);
 };
