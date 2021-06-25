@@ -1,3 +1,6 @@
+const https = require("http");
+const fs = require("fs");
+const path = require('path');
 const express = require('express');
 const app = express();
 
@@ -11,6 +14,8 @@ module.exports = (client) => {
         };
         client.log.web(`${req.protocol}://${req.get('host')}${req.originalUrl}`);
     });
+    
+    // Listen.
     app.listen(client.secrets.port);
     client.log.log(`App listening at https://localhost:${client.secrets.port}`);
 };
