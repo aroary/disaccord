@@ -6,7 +6,7 @@ module.exports = {
             name:"ping",
             usage:"ping",
             description:"ping the bot",
-            aliases:["latency","%"],
+            aliases:["latency"],
             permissions:["SEND_MESSAGES"]
         },
         availability:{
