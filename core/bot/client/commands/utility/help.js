@@ -40,24 +40,31 @@ module.exports = {
                 message.channel.send(client.help.trigger);
             }else{
                 const command = client.commands.get(args[0]) || client.commands.get(client.aliases.get(args[0])) || cats.filter(cat => cat.name.toUpperCase() === args[0].toUpperCase() || cat.id === args[0].toUpperCase());
-                if(Array.isArray(command)){
-                    if(command.length > 0){
-                        message.channel.send(commands.get(command[0].id));
-                        if(command.length > 1){
-                            client.log.warn("Duplicate category name found.");
+                if((Array.isArray(command) && command.length) || command){
+                    if(Array.isArray(command)){
+                        if(command.length > 0){
+                            message.channel.send(commands.get(command[0].id));
+                            if(command.length > 1){
+                                client.log.warn("Duplicate category name found.");
+                            };
                         };
+                    }else{
+                        const commandHelp = new Discord.MessageEmbed()
+                        .setTitle(command.config.info.name.toUpperCase())
+                        .addFields(
+                            {name:"Description:", value:command.config.info.description, inline: false},
+                            {name:"Usage", value:command.config.info.usage, inline:false},
+                            {name:"Aliases:", value:command.config.info.aliases.length > 0 ? command.config.info.aliases.join(", ") : "No aliases.", inline:false}
+                        )
+                        .setFooter(client.config.prefix, "https://cdn.discordapp.com/attachments/766316423306805269/855158055889010689/keyword-research-xxl.png")
+                        .setTimestamp()
+                        message.channel.send(commandHelp);
                     };
                 }else{
-                    const commandHelp = new Discord.MessageEmbed()
-                    .setTitle(command.config.info.name.toUpperCase())
-                    .addFields(
-                        {name:"Description:", value:command.config.info.description, inline: false},
-                        {name:"Usage", value:command.config.info.usage, inline:false},
-                        {name:"Aliases:", value:command.config.info.aliases.length > 0 ? command.config.info.aliases.join(", ") : "No aliases.", inline:false}
-                    )
-                    .setFooter(client.config.prefix, "https://cdn.discordapp.com/attachments/766316423306805269/855158055889010689/keyword-research-xxl.png")
-                    .setTimestamp()
-                    message.channel.send(commandHelp);
+                    const n = new Discord.MessageEmbed()
+                    .setDescription(`Nothing was found for ${args[0]}`)
+                    .setTimestamp();
+                    message.channel.send(n);
                 };
             };
         }else{
