@@ -14,6 +14,11 @@ module.exports = {
             channel:"direct",
         }
     },
+    /**
+     * @param {Discord.Client} client - Your client 
+     * @param {Discord.Message} message - The message
+     * @param {Array} args - The message arguments (mesage.content.split(" "))
+     */
     execute:(client, message, args) => {
         if(client.online){
             client.online = false;

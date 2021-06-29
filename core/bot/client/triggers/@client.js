@@ -13,6 +13,11 @@ module.exports = {
             position:"include"
         }
     },
+    /**
+     * @param {Discord.Client} client - Your client 
+     * @param {Discord.Message} message - The message
+     * @param {Array} args - The message arguments (mesage.content.split(" "))
+     */
     execute:(client, message, args) => {
         if(message.mentions.users.first()){
             if(message.mentions.users.first().id === client.user.id && message.content.includes(client.user.id)){

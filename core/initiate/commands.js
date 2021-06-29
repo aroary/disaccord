@@ -1,11 +1,9 @@
 const Discord = require('discord.js');
 const fs = require('fs');
-
 /**
  * Initializes Client Commands.
  * @param {Discord.Client} client - Your Client
  */
-
 module.exports = (client) => {
     // Define a collection for both commands themselves and their aliases.
     client.commands = new Discord.Collection();
@@ -17,7 +15,7 @@ module.exports = (client) => {
     // Read the command directory.
     fs.readdir(`core/bot/client/commands`, (err, dir) => {
         // If an error occurs, log it to the console and abort command initialization.
-        if (err) return client.log.error(`Could not read directory: ${err.message}`);
+        if(err)return client.log.error(`Could not read directory: ${err.message}`);
 
         // Help command catagories array
         client.help.commands=new Map();
@@ -31,11 +29,8 @@ module.exports = (client) => {
                 
                 // Find catagory config folder
                 const settings = files.filter(name => name.split(".").pop() === "json");
-                if(settings.length < 1){
-                    client.log.error(`no config file found in: commands/${folder}`);
-                }else if(settings.length > 1){
-                    client.log.warn(`extra json files found for: commands/${folder}`);
-                };
+                if(settings.length < 1)client.log.error(`no config file found in: commands/${folder}`);
+                else if(settings.length > 1)client.log.warn(`extra json files found for: commands/${folder}`);
                 const config = require(`../bot/client/commands/${folder}/${settings[0]}`);
 
                 // Filter for only JS files and log the amount found.

@@ -9,6 +9,11 @@ module.exports = {
             aliases:["memory", "cpu"],
             permissions:["SEND_MESSAGES"]
         },
+        /**
+     * @param {Discord.Client} client - Your client 
+     * @param {Discord.Message} message - The message
+     * @param {Array} args - The message arguments (mesage.content.split(" "))
+     */
         availability:{
             find:false,
             public:false,

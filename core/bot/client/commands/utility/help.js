@@ -14,6 +14,11 @@ module.exports = {
             channel:"all",
         }
     },
+    /**
+     * @param {Discord.Client} client - Your client 
+     * @param {Discord.Message} message - The message
+     * @param {Array} args - The message arguments (mesage.content.split(" "))
+     */
     execute:(client, message, args) => {
         const commands = client.help.commands;
         const cats = client.help.categories;

@@ -16,6 +16,11 @@ module.exports = {
             channel:"all",
         }
     },
+    /**
+     * @param {Discord.Client} client - Your client 
+     * @param {Discord.Message} message - The message
+     * @param {Array} args - The message arguments (mesage.content.split(" "))
+     */
     execute:(client, message, args) => {
         message.channel.send(".")
         .then(msg => {

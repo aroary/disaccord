@@ -6,7 +6,7 @@ module.exports = {
             name:"host",
             usage:"host",
             description:"get host machine data",
-            aliases:["os"],
+            aliases:["os", "ip"],
             permissions:["SEND_MESSAGES"]
         },
         availability:{
@@ -21,40 +21,41 @@ module.exports = {
      * @param {Array} args - The message arguments (mesage.content.split(" "))
      */
     execute:(client, message, args) => {
-        const data = `\`\`\`
+        // Load cpu data
+        var iteration = 0;
+        var cpuData = "";
+        OS.cpus().forEach(cpu => {
+            const cpus = `cpu ${iteration}:\n`;
+            const times = `+ ~ idle: ${cpu.times.idle}\n+ ~ irq: ${cpu.times.irq}\n+ ~ nice: ${cpu.times.nice}\n+ ~ system: ${cpu.times.sys}\n+ ~ user: ${cpu.times.user}`
+            cpuData += `\n${cpus}+ model: ${cpu.model}\n+ speed: ${cpu.speed}\n+ times: ${times}\n`
+            
+            iteration ++;
+        });
 
+        // Build message
+        const data = `\`\`\`diff
+~ endianness: ${OS.endianness()}
+${cpuData}
++ free memory: ${OS.freemem()}
+- priority: ${OS.getPriority()}
++ home directory: ${OS.homedir()}
++ host name: ${OS.hostname()}
++ network interfaces: ${OS.networkInterfaces()}
++ platform: ${OS.platform()}
++ release: ${OS.release()}
++ temporary directory: ${OS.tmpdir()}
+~ total memory: ${OS.totalmem()}
++ type: ${OS.type()}
++ uptime: ${OS.uptime()}
 
-        \`\`\``;
+userinfo:
+~ shell: ${OS.userInfo({encoding:"utf-8"}).shell}
+~ username: ${OS.userInfo({encoding:"utf-8"}).username}
++ version: ${OS.version()}\`\`\``;
+
+        const m = new Discord.MessageEmbed()
+        .setDescription(data)
+        .setTimestamp();
+        message.channel.send(m);
     }
 };
-
-// const data = `\`\`\`diff
-// OS.cpus().forEach(cpu => {
-//     cpu.model
-//     cpu.speed
-//     cpu.times
-// }),
-// endianness: ${OS.endianness()}
-// freemem: ${OS.freemem()}
-// priority: ${OS.getPriority()}
-// homedir: ${OS.homedir()}
-// hostname: ${OS.hostname()}
-// OS.loadavg().forEach(avg => {
-//     avg
-// }),
-// network interfaces: ${OS.networkInterfaces()}
-// platform: ${OS.platform()}
-// release: ${OS.release()}
-// tmpdir: ${OS.tmpdir()}
-// totalmem: ${OS.totalmem()}
-// type: ${OS.type()}
-// uptime: ${OS.uptime()}
-// userinfo:
-// ~ gid: ${OS.userInfo({encoding:"utf-8"}).gid}
-// ~ homedir: ${OS.userInfo({encoding:"utf-8"}).homedir}
-// ~ shell: ${OS.userInfo({encoding:"utf-8"}).shell}
-// ~ uid: ${OS.userInfo({encoding:"utf-8"}).uid}
-// ~ username: ${OS.userInfo({encoding:"utf-8"}).username}
-// version: ${OS.version()}
-// \`\`\``;
-// console.log(data);
