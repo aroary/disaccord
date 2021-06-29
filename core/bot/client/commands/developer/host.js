@@ -5,7 +5,7 @@ module.exports = {
         info:{
             name:"host",
             usage:"host",
-            description:"get host machine data",
+            description:"Get host machine data and specs.",
             aliases:["os", "ip"],
             permissions:["SEND_MESSAGES"]
         },

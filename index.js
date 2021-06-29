@@ -8,7 +8,7 @@ console.log("\x1b[31m%s\x1b[0m", require("./core/constants/logo.json"));
 const client = new Discord.Client();
 
 // Load secrets.
-var secrets = fs.readFileSync("./secrets.json", {encoding:"utf-8"});
+var secrets = fs.readFileSync("./.secrets.json", {encoding:"utf-8"});
 secrets = JSON.parse(secrets);
 client.secrets = secrets;
 client.config = secrets;

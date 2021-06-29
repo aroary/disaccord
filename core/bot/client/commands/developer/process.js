@@ -5,7 +5,7 @@ module.exports = {
         info:{
             name:"process",
             usage:"process",
-            description:"Get the host specs and performance data",
+            description:"Get the process info and performance data",
             aliases:["memory", "cpu"],
             permissions:["SEND_MESSAGES"]
         },
