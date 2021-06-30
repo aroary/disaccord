@@ -20,6 +20,7 @@ module.exports = {
         if(args[0]){
             var reloaded = {success:[], fail:[]};
             args.map(arg => arg.toUpperCase());
+            args = [...new Set(args)];
             fs.readdir(`core/bot/client/commands`, (err, dir) => {
                 // If an error occurs, log it to the console and abort command initialization.
                 if(err)return client.log.error(`Could not read directory: ${err.message}`);
