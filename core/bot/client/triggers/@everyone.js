@@ -7,7 +7,7 @@ module.exports = {
             permissions:[]
         },
         availability:{
-            find:true,
+            find:false,
             public:true,
             channel:"all", // all, server, private
             position:"include" // start, end, include
