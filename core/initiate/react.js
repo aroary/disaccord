@@ -10,7 +10,7 @@ module.exports = (client) => {
     // Read the command directory.
     fs.readdir(`core/bot/client/reactions`, (err, dir) => {
         // If an error occurs, log it to the console and abort command initialization.
-        if(err)return client.log.error(`Could not read directory: ${err.message}`);
+        if (err) return client.log.error(`Could not read directory: ${err.message}`);
 
         // Help command catagories array
         client.help.reactions = new Map();
