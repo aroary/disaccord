@@ -52,9 +52,9 @@ module.exports = {
                         const commandHelp = new Discord.MessageEmbed()
                         .setTitle(command.config.info.name.toUpperCase())
                         .addFields(
-                            {name:"Description:", value:command.config.info.description, inline: false},
-                            {name:"Usage", value:command.config.info.usage, inline:false},
-                            {name:"Aliases:", value:command.config.info.aliases.length > 0 ? command.config.info.aliases.join(", ") : "No aliases.", inline:false}
+                            {name:"Description:", value:command.config.info.description, inline:true},
+                            {name:"Usage:", value:command.config.info.usage, inline:true},
+                            {name:"Aliases:", value:command.config.info.aliases.length > 0 ? command.config.info.aliases.join(", ") : "No aliases.", inline:true}
                         )
                         .setFooter(client.config.prefix, "https://cdn.discordapp.com/attachments/766316423306805269/855158055889010689/keyword-research-xxl.png")
                         .setTimestamp()
