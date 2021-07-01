@@ -1,5 +1,14 @@
 [
-    {"type":"PLAYING", "name":"i guess"},
-    {"type":"LISTENING", "name":"{users} users"},
-    {"type":"PLAYING", "name":"in {servers} servers"}
+    {
+        "type": "PLAYING",
+        "name": "i guess"
+    },
+    {
+        "type": "LISTENING",
+        "name": "{users} users"
+    },
+    {
+        "type": "PLAYING",
+        "name": "in {servers} servers"
+    }
 ]

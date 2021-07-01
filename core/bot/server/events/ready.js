@@ -1,8 +1,8 @@
 module.exports = {
-    config:{
-        name:'ready'
+    config: {
+        name: 'ready'
     },
-    run:async(client) => {
+    run: async (client) => {
         client.log.ready(client);
         client.status(client);
     }

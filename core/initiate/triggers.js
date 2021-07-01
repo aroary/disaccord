@@ -14,8 +14,8 @@ module.exports = (client) => {
     var loaded = "";
     fs.readdir(`core/bot/client/triggers`, (error, files) => {
         // If an error occurs, log it to the console and abort trigger initialization.
-        if(error) return client.log.error(`Could not read directory: ${error.message}`);
-        
+        if (error) return client.log.error(`Could not read directory: ${error.message}`);
+
         // Filter for only JS files and log the amount found.
         const jsFiles = files.filter(fileName => fileName.split('.').pop() === 'js');
         client.log.log(`Loading ${jsFiles.length} triggers from client/triggers.`);
@@ -29,16 +29,16 @@ module.exports = (client) => {
             client.log.load(`trigger Loaded: ${trigger.config.info.name}.`);
 
             // Add to help command.
-            if(trigger.config.availability.find){
+            if (trigger.config.availability.find) {
                 const info = trigger.config.info;
                 loaded += `**\`${info.name}\`**: ${info.description}\n`;
             };
 
             // Help
             client.help.trigger = new Discord.MessageEmbed()
-            .setTitle("Triggers")
-            .setDescription(loaded)
-            .setTimestamp();
+                .setTitle("Triggers")
+                .setDescription(loaded)
+                .setTimestamp();
         });
     });
 };

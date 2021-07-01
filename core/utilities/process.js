@@ -3,14 +3,14 @@ const Discord = require("discord.js");
  * 
  * @param {Discord.Message} message - the message
  */
-module.exports=(message)=>{
+module.exports = (message) => {
     const p = process.cpuUsage();
     const m = process.memoryUsage();
     const r = process.resourceUsage();
 
     // Memory usage values
     const mu = new Map();
-    for(let key in m){
+    for (let key in m) {
         mu.set(key, Math.round(m[key] / 1024 / 1024 * 100) / 100);
     };
 
@@ -48,8 +48,8 @@ resource usage:
 - resource usage voluntary context switches: ${r.voluntaryContextSwitches}
 \`\`\``;
     const embed = new Discord.MessageEmbed()
-    .setDescription(data)
-    .setTimestamp();
+        .setDescription(data)
+        .setTimestamp();
 
     message.channel.send(embed)
 };

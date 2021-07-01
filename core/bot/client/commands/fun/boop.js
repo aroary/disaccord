@@ -1,17 +1,17 @@
 const Discord = require('discord.js');
 module.exports = {
-    config:{
-        info:{
-            name:"boop",
-            usage:"boop",
-            description:"boop",
-            aliases:[],
-            permissions:[]
+    config: {
+        info: {
+            name: "boop",
+            usage: "boop",
+            description: "boop",
+            aliases: [],
+            permissions: []
         },
-        availability:{
-            find:false,
-            public:false,
-            channel:"all",
+        availability: {
+            find: false,
+            public: false,
+            channel: "all",
         }
     },
     /**
@@ -19,7 +19,7 @@ module.exports = {
      * @param {Discord.Message} message - The message
      * @param {Array} args - The message arguments (mesage.content.split(" "))
      */
-    execute:(client, message, args) => {
+    execute: (client, message, args) => {
         return message.channel.send("Beep!");
     }
 };
