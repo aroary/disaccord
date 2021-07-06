@@ -15,6 +15,7 @@ module.exports = {
         // Commands
         if (client.commands) {
             if (message.content.toLowerCase().startsWith(client.config.prefix)) {
+                // Check for command.
                 var args = message.content.split(' ');
                 const command = args[0].slice(client.config.prefix.length).replace("\n", "").toLowerCase();
                 args = args.slice(1);
