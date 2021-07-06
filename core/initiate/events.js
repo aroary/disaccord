@@ -3,7 +3,7 @@ const fs = require('fs');
  * Initialized Client Events.
  * @param {Discord.Client} client - Your Client
  */
-module.exports = (client) => {
+module.exports = client => {
     fs.readdir('core/bot/server/events', (err, files) => {
         // If an error occurs, log it to the console and abort command initialization.
         if (err) return client.log.error(`Could not read event directory: ${err.message}`);

@@ -1,22 +1,25 @@
 module.exports = (client) => {
     // misc
-    client.help = {};
+    client.help = new Object();
 
-    // Load utilities
+    // Load utilities.
     require("./utility")(client)
 
-    // Load commands
+    // Load commands.
     require("./commands")(client);
 
-    // Load triggers
+    // Load triggers.
     require("./triggers")(client);
 
-    // Load reactions
-    require("./react")(client);
+    // Load reactions.
+    require("./reactions")(client);
 
-    // Load events
+    // Load alarms.
+    require("./alarms")(client);
+
+    // Load events.
     require("./events")(client);
 
-    // Iniciate webserver
+    // Iniciate webserver.
     require("./web")(client);
 };

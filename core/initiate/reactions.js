@@ -3,7 +3,7 @@ const fs = require('fs');
 /**
  * @param {Discord.Client} client - Your Client
  */
-module.exports = (client) => {
+module.exports = client => {
     // Define a collection for both reactions
     client.reactions = new Discord.Collection();
 

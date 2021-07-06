@@ -4,7 +4,7 @@ const app = express();
 /**
  * @param {Discord.Client} client - Your client 
  */
-module.exports = (client) => {
+module.exports = client => {
     app.get('/', (req, res) => {
         if (client.config.supportServer) {
             res.send(`<iframe src="https://discord.com/widget?id=${client.config.supportServer}&theme=dark"width="350"height="500"allowtransparency="true"frameborder="0"sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>`);

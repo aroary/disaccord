@@ -4,7 +4,7 @@ const fs = require('fs');
  * Initializes Client Commands.
  * @param {Discord.Client} client - Your Client
  */
-module.exports = (client) => {
+module.exports = client => {
     // Define a collection for both commands themselves and their aliases.
     client.commands = new Discord.Collection();
     client.aliases = new Discord.Collection();
@@ -13,7 +13,7 @@ module.exports = (client) => {
     client.help.categories = [];
 
     // Read the command directory.
-    fs.readdir(`core/bot/client/commands`, (err, dir) => {
+    fs.readdir("core/bot/client/commands", (err, dir) => {
         // If an error occurs, log it to the console and abort command initialization.
         if (err) return client.log.error(`Could not read directory: ${err.message}`);
 
