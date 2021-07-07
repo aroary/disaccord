@@ -254,9 +254,9 @@ app.listen(port);
 * **`port`**: *`Integer`* - If you set a different port you may need to update in `core/utilities/logger.js`.
 ##### [back to top](#index)
 ## Data
-* **activities**: `core\constants\activities.json`.
-* **permissions**: `core\constants\permissions.json`.
-* **Events**: `core\constants\events.json`.
+* **activities**: `/core/constants/activities.json`.
+* **permissions**: `/core/constants/permissions.json`.
+* **Events**: `/core/constants/events.json`.
     * > ⚠️ Events may not be 100% accurate, please report inaccuracy to that we can fix it.
 ##### [back to top](#index)
 ___
