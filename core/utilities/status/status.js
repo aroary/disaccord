@@ -30,5 +30,5 @@ module.exports = (client) => {
         if (client.online) {
             setStatus(client);
         };
-    }, 5 * 60000);
+    }, client.config.statusInterval);
 };
