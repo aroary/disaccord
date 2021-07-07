@@ -12,6 +12,7 @@ var secrets = fs.readFileSync("./.secrets.json", { encoding: "utf-8" });
 secrets = JSON.parse(secrets);
 client.secrets = secrets;
 client.config = secrets;
+client.settings = secrets;
 
 // Initiate bot.
 require("./core/initiate/initiate")(client);
@@ -23,5 +24,5 @@ client.login(client.secrets.token)
 		client.log.log("Logged in, getting ready...");
 	})
 	.catch(() => {
-		client.log.error("Failed to log in. Check token and internet connection");
+		client.log.error("Failed to log in. Check token and internet connection.");
 	});

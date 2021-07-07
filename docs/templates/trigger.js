@@ -9,7 +9,7 @@ module.exports = {
         availability: {
             find: true,
             public: true,
-            channel: "all", // all, server, private
+            channel: "all", // all, guild, private
             position: "start" // start, end, include
         }
     },

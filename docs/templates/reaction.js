@@ -5,9 +5,9 @@ module.exports = {
         permissions: []
     },
     /**
-     * @param {Discord.Client} client 
-     * @param {Discord.MessageReaction} reaction 
-     * @param {Discord.User} user 
+     * @param {Discord.Client} client - Your client
+     * @param {Discord.MessageReaction} reaction - The reaction
+     * @param {Discord.User} user - The user who reacted
      */
     execute: (client, reaction, user) => {
         // Code
