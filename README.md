@@ -1,264 +1,242 @@
-<div style="text-align:center;">
-    <img src="https://cdn.discordapp.com/attachments/806009448597946393/856372173966934026/854412204877807650.png">
+<div id="header" style="text-align:center;">
+    <img src="https://cdn.discordapp.com/attachments/806009448597946393/856372173966934026/854412204877807650.png" style="width:25%;">
 </div>
 
 # Disaccord
-> a discord bot *command*, *trigger*, *reaction* handler.
+## Index
+* Getting started
+    * [Introduction](#introduction)
+    * [Settings](#settings)
+* [Commands](#commands)
+    * [Categories](#categories)
+* [Triggers](#triggers)
+* [Reactions](#reactions)
+* [Events](#events)
+* [Status](#status)
+* [Website](#website)
+    * Remote Logger
+* [data](#data)
 ___
-## Contents
-- [Getting started](#Settings)
-    - [About / help](#About)
-- [Adding commands](#Commands)
-    - [Adding categories](#Categories)
-- [Adding message triggers](#Triggers)
-    - [Adding reaction triggers](#Reactions)
-- [Adding events](#Events)
-- [Permissions](#Permissions)
-- [Setting status](#Status)
-- [Building your website](#Website)
-## Settings
-### To get started, clone the code to your compiler. Add all your bot information to the `.secrets.json`. your `.secrets.json` should look similar to this:
+## Getting Started
+* ### Introduction
+#### Dissacord is a Discord bot template for making discord bots. The Reason we made Dissacord was because we saw that there was no good dynamic template for new discord.js developers to use to learn how to make bots. Enjoy this command handler and we would apreciate feadback and bug reports.
+* ### Settings
+#### For your bot to work, the most important thing you will need to do is fill in the settings file. The most important parameter in the settings file is the token string. Fill in the token, prefix and developers fields now, you can come back to the rest later.
 ```json
 {
-    "token":"TOKEN",
-    "prefix":"!",
-    "port":3000,
-    "owners":[],
-    "developers":[],
-    "testers":[],
-    "supportServer":"SUPPORT_SERVER_ID",
-    "description":"Just another bot!"
+    "token": "BOT_LOGIN_TOKEN",
+    "prefix": "BOT_COMMAND_PREFIX",
+    "port": 3000,
+    "statusInverval":300000,
+    "owners": ["USER_ID"],
+    "developers": ["USER_ID"],
+    "testers": ["USER_ID"],
+    "supportServer": "SERVER_ID",
+    "description": "BOT_DESCRIPTION",
+    "version": "2.12.15.46"
 }
 ```
-* **`token`**: This is your super secret bot login token.
-* **`prefix`**: This is the prefix users will use to execute commands.
-* **`port`**: This is the port your *webapp* will listen to.
-* **`description`**: This is your bot description.
-#### Check out the templates in `disaccord/templates`.
-###### [Back to top](#Contents)
-___
+>###### /.secrets.json
+* **`token`**: *`String`* - The token used for logging in the bot goes here.
+* **`prefix`**: *`String`* - The prefix for the bot. (prefix is used with the command to run it)
+* **`port`**: *`Intiger`* - The port number for the webapp to listen at. (`80` for defult, `null` for no webapp)
+* **`statusInverval`**: *`Intiger`* - The interval to set a new status (milliseconds)
+* **`owners`**: *`Array`* - The owners of the bot have access to all commands.
+* **`developers`**: *`Array`* - The developers of the bot have access to everything.
+* **`testers`**: *`Array`* - The testers of the bot have access to some special features.
+* **`supportServer`**: *`String`* - Support server for the bot.
+* **`description`**: *`String`* - A description of the bot to display.
+* **`version`**: *`String`* - The version of this command handler (latest is `2`)
+##### [back to top](#index)
 ## Commands
-### Use this template for making commands.
+### Use this template to make and add commands.
 ```javascript
 const Discord = require('discord.js');
 module.exports = {
-    config:{
-        info:{
-            name:"COMMAND_NAME",
-            usage:"COMMAND_USAGE (no prefix)",
-            description:"COMMAND DESCRIPTION",
-            aliases:[],
-            permissions:[]
+    config: {
+        info: {
+            name: "COMMAND_NAME",
+            usage: "COMMAND_USAGE (no prefix)",
+            description: "COMMAND DESCRIPTION",
+            aliases: [],
+            permissions: ["SEND_MESSAGES"]
         },
-        availability:{
-            find:true, // apears in the help command
-            public:true, // available to non developers
-            channel:"all", // all, server, private set where the command can be used
+        availability: {
+            find: true, // apears in the help command
+            public: true, // available to non developers
+            channel: "all" // all, guild, direct (set where the command can be used)
         }
     },
-    execute:(client, message, args) => {
+    /**
+     * @param {Discord.Client} client - Your client 
+     * @param {Discord.Message} message - The message
+     * @param {Array} args - The message arguments (mesage.content.split(" "))
+     */
+    execute: (client, message, args) => {
         // Code
     }
 };
 ```
-> Commands are things that people use to do stuff, for example they send `ping` and the bot responds with `pong`.
-##### info:
-* **`name`**: The name of the command, this is what the user sends to execute the command.
-* **`usage`**: example of how to use the command or the required and optional parameters.
-* **`description`**: A description of what the command does.
-* **`aliases`**: *Array* of *Strings* which are other names for the command.
-* **`permissions`**: The permissions the Bot **and** the User need to execute the command.
-##### availability:
-* **`find`**: This *Bool* decides if the command will show up in the help command.
-* **`public`**: This *Bool* will allow anyone to use the command if set to true.
-* **`channel`**: This *String* is set to either `all`, `server`, `private`. If set to `all`, then the command can be used anywhere, if set to `server` then only in a server and if set to `private` than it can only be used in a direct message.
-###### [Back to top](#Contents)
-___
-## Categories
-### To add a new command catagory, make a new folder in the commands folder. Then add a category file called `category.json` and past the category template.
-### The execute function will execute when the command is triggerd
-```javascript
+>###### /docs/templates/command.js
+* **`info`**: *`Object`* - Information about the command.
+    * **`name`**: *`String`* - The name of the command. (this will run the command)
+    * **`usage`**: *`String`* - How the command is used. (without the prefix in front)
+    * **`description`**: *`String`* - What the command does.
+    * **`aliases`**: *`Array`* - Other names for the command. (these will also run the command)
+    * **`permissions`**: *`Array`* - The permissons required for the bot and user to run the command. (checks for each (bot and user))
+* **`availability`**: *`Object`* - Limits to the command.
+    * **`find`**: *`Boolean`* - Appears on the help command.
+    * **`public`**: *`Boolean`* - Can be ran by anyone (with permissions)
+    * **`channel`**: *`String`* - Where the command can be ran. (`all`: Anywhere, `guild`: Only in a server, `private`: Only in a direct message)
+* ### Categories
+### Use this Template to add Command categories.
+```json
 {
-    "id":"CTG",
-    "name":"CATAGORY_NAME",
-    "description":"CATEGORY DESCRIPTION"
+    "id": "CTG",
+    "name": "CATAGORY_NAME",
+    "description": "CATEGORY DESCRIPTION"
 }
 ```
-* **`id`**: The ID of the category is to help find the commands.
-* **`name`**: The name of the category will be displayed on the front page of the help command. Set to `null` to avaoid this.
-* **`description`**: This is the description of the type of commands on the catagory. This is displayed under the category *name* in the help command
-___
-###### [Back to top](#Contents)
+>###### /docs/templates/category.json
+* **`id`** *`String`* - The help command will be used with the id to show the category.
+* **`name`** *`String`* - The name of the category to display on the help command. (Set to `null` to remove from help command)
+* **`description`** *`String`* - A description of the commands in the category.
+##### [back to top](#index)
 ## Triggers
-### Use this template for making triggers.
+### Use this template to make and add triggers.
 ```javascript
 const Discord = require('discord.js');
 module.exports = {
-    config:{
-        info:{
-            name:"NAME",
-            description:"DESCRIPTION",
-            permissions:[]
+    config: {
+        info: {
+            name: "NAME",
+            description: "DESCRIPTION",
+            permissions: []
         },
-        availability:{
-            find:true,
-            public:true,
-            channel:"all", // all, server, private
-            position:"start" // start, end, include
+        availability: {
+            find: true,
+            public: true,
+            channel: "all", // all, guild, private
+            position: "start" // start, end, include
         }
     },
-    execute:(client, message, args) => {
+    /**
+     * @param {Discord.Client} client 
+     * @param {Discord.Message} message 
+     * @param {Array} args - The message arguments (message.content.split(" ")) 
+     */
+    execute: (client, message, args) => {
         // Code
     }
 };
 ```
-> Triggers are things that execute when a user sends a keyword.
-##### info
-* **`name`**: The name of the trigger, this is what the user sends to execute the trigger.
-* **`description`**: A description of what the command does.
-* **`permissions`**: The permissions the Bot **and** the User need to execute the trigger.
-##### availability
-* **`find`**: This *Bool* decides if the command will show up in the help command.
-* **`public`**: This *Bool* will allow anyone to use the command if set to true.
-* **`channel`**: This *String* is set to either `all`, `server`, `private`. If set to `all`, then the command can be used anywhere, if set to `server` then only in a server and if set to `private` than it can only be used in a direct message.
-* **`position`**: This reffers to the location of the *keyword* in the message. can be set to either `start` for the beginning of the message, `includes` for anywhere in the message and `end` for at the end of the message. The trigger will only execute of the *keyword* is in the correct place.
-### The execute function will execute when the trigger is triggered.
-###### [Back to top](#Contents)
-___
+>###### /docs/templates/trigger.js
+* **`info`**: *`Object`* - Information about the trigger.
+    * **`name`**: *`String`* - The name of the trigger. (used to trigger the trigger) 
+    * **`description`**: *`String`* - A description of the trigger.
+    * **`permissions`**: *`Array`* - The required permissions to execute the trigger. (checks for each (bot and user))
+* **`availability`**: *`Object`* - Limitations of the trigger.
+    * **`find`**: *`Boolean`* - Can be found on the help command.
+    * **`public`**: *`Boolean`* - Can be used by anyone with permissions.
+    * **`channel`**: *`String`* - Where the trigger can run. (`all`: Anywhere, `guild`: Only in a server, `private`: Only in a direct message)
+    * **`position`**: *`String`* - Where the key word (name) needs to be found to execute the trigger. (`start`, `end`, `include`)
+##### [back to top](#index)
 ## Reactions
-### Use this template to add reaction triggers.
+### Use this template to make and add reactions.
 ```javascript
 const Discord = require('discord.js');
 module.exports = {
-    config:{
-        emoji:"👋",
-        permissions:[]
+    config: {
+        emoji: "",
+        permissions: []
     },
-    execute:(client, reaction, user) => {
+    /**
+     * @param {Discord.Client} client - Your client
+     * @param {Discord.MessageReaction} reaction - The reaction
+     * @param {Discord.User} user - The user who reacted
+     */
+    execute: (client, reaction, user) => {
         // Code
     }
 };
 ```
-> Reactions are activated when a user reacts to a message.
-* **`emoji`**: The emoji needed to be used to run the trigger.
-* **`permissions`**: The permissions required to run the trigger.
-### The execute function will execute when the reaction is triggered.
-> #### ⚠️ Currently unavailable.
-###### [Back to top](#Contents)
-___
+>###### /docs/templates/reaction.js
+* **`emoji`**: *`String`* - The actual emoji. (you may need to copy and past)
+* **`permissions`**: *`Array`* - The required permissions to execute the reaction. (checks for each (bot and user))
+##### [back to top](#index)
 ## Events
-### Use this template to add events
+### Use this template to make and add events.
 ```javascript
 const Discord = require('discord.js');
 module.exports = {
-    name:"name",
-    run:(client/*, other events*/) => {
+    name: "name",
+    /**
+     * @param {Discord.Client} client - Your client 
+     */
+    run: (client/*, other events*/) => {
         // code
     }
 };
 ```
-> Events are what the api sends things that happen to, for example when a user sends a message the api will send the data to the message event.
-* **`name`**: The name of the event.
-* **`run`**: This function will run whenever the event name is triggered. If there are any other parameters, add them after the `client` paarameter.
-### The run function will execute when an event is triggered.
-###### [Back to top](#Contents)
-___
-## Permissions
-```json
-[
-    "ADMINISTRATOR",
-    "CREATE_INSTANT_INVITE",
-    "KICK_MEMBERS",
-    "BAN_MEMBERS",
-    "MANAGE_CHANNELS",
-    "MANAGE_GUILD",
-    "ADD_REACTIONS",
-    "VIEW_AUDIT_LOG",
-    "PRIORITY_SPEAKER",
-    "STREAM",
-    "VIEW_CHANNEL",
-    "SEND_MESSAGES",
-    "SEND_TTS_MESSAGES",
-    "MANAGE_MESSAGES",
-    "EMBED_LINKS",
-    "ATTACH_FILES",
-    "READ_MESSAGE_HISTORY",
-    "MENTION_EVERYONE",
-    "USE_EXTERNAL_EMOJIS",
-    "VIEW_GUILD_INSIGHTS",
-    "CONNECT",
-    "SPEAK",
-    "MUTE_MEMBERS",
-    "DEAFEN_MEMBERS",
-    "MOVE_MEMBERS",
-    "USE_VAD",
-    "CHANGE_NICKNAME",
-    "MANAGE_NICKNAMES",
-    "MANAGE_ROLES",
-    "MANAGE_WEBHOOKS",
-    "MANAGE_EMOJIS"
-]
-```
-> ###### core\bot\server\events
-> #### ⚠️ The permissions array checks if the user has all the permissions not one or the other.
-> #### ⚠️ The permissions array checks for permissions for the bot and user.
-###### [Back to top](#Contents)
-___
+>###### /docs/templates/event.js
+* **`name`**: *`String`* - The event name.
+* **`run`**: *`Function`* - The function ran on an event. (params: `client`, other)
+##### [back to top](#index)
 ## Status
-### Be sure to change the status array
-### Defult:
+### Use this emplate to add a status to the bot.
 ```json
 [
-    {"type":"PLAYING", "name":"i guess"},
-    {"type":"PLAYING", "name":"with fire"}
+    {
+        "type": "LISTENING",
+        "name": "{users} users"
+    },
+    {
+        "type": "PLAYING",
+        "name": "in {servers} servers"
+    }
 ]
 ```
-> ###### core\utilities\status\presences.json
-#### You can use these in you `name` parameter to replace with a value:
-* **`{servers}`**: add this to the `name` to replace it with the server count in the status
-* **`{channels}`**: add this to the `name` to replace it with the channel count in the status
-* **`{users}`**: add this to the `name` to replace it with the user count in the status
-### Status types:
-```json
-[
-    "PLAYING",
-    "STREAMING",
-    "LISTENING",
-    "WATCHING",
-    "CUSTOM",
-    "COMPETING"
-]
-```
-> core\constants\activities.json
-#### You can use any of these in the `type` parameter.
-###### [Back to top](#Contents)
-___
+>###### core\utilities\status\presences.json
+* **`type`**: *`String`* - The type of status (`core\constants\activities.json`)
+* **`name`**: *`String`* - The data shown in the status. (replace {users} with user count and {servers} with server count)
+* Set interval in `/.secrets.json`.
+##### [back to top](#index)
 ## Website
-### Your bot has a webapp
-### Some bots need a webapp to keep the bot online, so we started one up for you.
+* The defult content sent to the website is your support servers `iframe`.
+    * If you did not set your support servers `iframe` the defult is the official disacord support server `iframe`.
+    * Set the support server id in `/.secrets.json` (defult: https://discord.com/widget?id=854114095929491456&theme=dark).
+* The website does not initiate if there is no port found.
+    * Set the port in `/.secrets.json`.
+### Remote logger
+#### Set the url for the logger to send requests to.
 ```javascript
-const express = require('express');
-const app = express();
-
-module.exports = (client) => {
-    app.get('/', (req, res) => {
-        res.send("something!");
-    });
-
-    app.listen(client.secrets.port);
-};
+const secure = true;
+const ip = "";
+const domain = "logs.aroary.repl.co";
+const port = null;
+const endpoint = "/";
 ```
-> ###### core\initiate\web.js
-#### You can also use your webapp as a website to have commands and info posted. We are considering adding a template for that as well.
-###### [Back to top](#Contents)
+* **`secure`**: *`Boolean`* - If the website starts with https then it is secute and `secure` should be set to `true`.
+* **`ip`**: *`String`* - A machine ip address to send requests to.
+* **`domain`**: *`String`* - A domain name to send requests to.
+* **`port`**: *`Integer`* - A port number if there is one. (not `80`)
+* **`endpoint`**: *`String`* - The end of the url (filepath). (`"/"` will be treated as an empty string.)
+* If there is no `ip` and no `domain` then the logger will not send any requests.
+    * The `ip` address will be used if there is both an `ip` and `domain`.
+##### [back to top](#index)
+## Data
+* **activities**: `core\constants\activities.json`.
+* **permissions**: `core\constants\permissions.json`.
+##### [back to top](#index)
 ___
-## About
-> ### If you encounter any problems, errors or you just need help or additional information you can let use know!
->> * [Issues / Bugs](https://github.com/aroary/disaccord/issues), Github issue report tab.
->> * [Help / Infomation](https://github.com/aroary/disaccord/discussions), Github repository `README.md` page.
->> * [Our Discord](https://discord.gg/BHtNSq5bq2), Join our discord for any other info or to test out bots made with this template.
->> * [Our Bot](https://discord.com/oauth2/authorize?client_id=852018638369062913&scope=bot&permissions=8), This is the invite link for our bot, the most advanced version of this template.
-> ##### Thank you for using this handler, it means all this work is going into good use! I hope this explains everything you need to know, if there is anything we left out or can be changed let us know!
->> #### Please mention to us any errors or problems, we want to make sure we are bug free!
->>> ##### @aroary#4444
-###### [Back to top](#Contents)
+>### Thank you for using this package for your bot, it means that my hard work is not for nothing!
+>### If you have anything to say, feadback is welcomed and appreciated.
+>### Please report any bugs or errors, we want to make sure our package is as healthy as possible!
+>>* #### If you nead any additional help or assistance you are welcome to join our support server. [Join](https://discord.gg/BHtNSq5bq2)
+>>* #### If you want to see an example of a real bot using this package you can now invite our bot. [Invite](https://discord.com/oauth2/authorize?client_id=852018638369062913&scope=bot&permissions=8)
+>***`aroary`***
+##### [back to top](#index)
+
+<div id="header" style="text-align:center;">
+    <img src="https://cdn.discordapp.com/attachments/806009448597946393/856372173966934026/854412204877807650.png" style="width:25%;">
+</div>
