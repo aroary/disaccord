@@ -19,7 +19,7 @@
 ___
 ## Getting Started
 * ### Introduction
-#### Dissacord is a Discord bot template for making discord bots. The Reason we made Dissacord was because we saw that there was no good dynamic template for new discord.js developers to use to learn how to make bots. Enjoy this command handler and we would apreciate feadback and bug reports.
+#### Disaccord is a Discord bot template for making discord bots. The Reason we made Disaccord was because we saw that there was no good dynamic template for new discord.js developers to use to learn how to make bots. Enjoy this command handler and we would appreciate feedback and bug reports.
 * ### Settings
 #### For your bot to work, the most important thing you will need to do is fill in the settings file. The most important parameter in the settings file is the token string. Fill in the token, prefix and developers fields now, you can come back to the rest later.
 ```json
@@ -27,7 +27,7 @@ ___
     "token": "BOT_LOGIN_TOKEN",
     "prefix": "BOT_COMMAND_PREFIX",
     "port": 3000,
-    "statusInverval":300000,
+    "statusInterval":300000,
     "owners": ["USER_ID"],
     "developers": ["USER_ID"],
     "testers": ["USER_ID"],
@@ -39,8 +39,8 @@ ___
 >###### `/.secrets.json`
 * **`token`**: *`String`* - The token used for logging in the bot goes here.
 * **`prefix`**: *`String`* - The prefix for the bot. (prefix is used with the command to run it)
-* **`port`**: *`Intiger`* - The port number for the webapp to listen at. (`80` for defult, `null` for no webapp)
-* **`statusInverval`**: *`Intiger`* - The interval to set a new status (milliseconds)
+* **`port`**: *`Integer`* - The port number for the webapp to listen at. (`80` for default, `null` for no webapp)
+* **`statusInterval`**: *`Integer`* - The interval to set a new status (milliseconds)
 * **`owners`**: *`Array`* - The owners of the bot have access to all commands.
     * *`String`* - User ID
 * **`developers`**: *`Array`* - The developers of the bot have access to everything.
@@ -65,7 +65,7 @@ module.exports = {
             permissions: ["SEND_MESSAGES"]
         },
         availability: {
-            find: true, // apears in the help command
+            find: true, // appears in the help command
             public: true, // available to non developers
             channel: "all" // all, guild, direct (set where the command can be used)
         }
@@ -73,7 +73,7 @@ module.exports = {
     /**
      * @param {Discord.Client} client - Your client 
      * @param {Discord.Message} message - The message
-     * @param {Array} args - The message arguments (mesage.content.split(" "))
+     * @param {Array} args - The message arguments (message.content.split(" "))
      */
     execute: (client, message, args) => {
         // Code
@@ -86,8 +86,8 @@ module.exports = {
     * **`usage`**: *`String`* - How the command is used. (without the prefix in front)
     * **`description`**: *`String`* - What the command does.
     * **`aliases`**: *`Array`* - Other names for the command. (these will also run the command)
-        * *`String`* - Secondarry names.
-    * **`permissions`**: *`Array`* - The permissons required for the bot and user to run the command. (checks for each (bot and user))
+        * *`String`* - Secondary names.
+    * **`permissions`**: *`Array`* - The permissions required for the bot and user to run the command. (checks for each (bot and user))
         * *`String`* - Discord permissions. (`/core/constants/permissions.json`)
 * **`availability`**: *`Object`* - Limits to the command.
     * **`find`**: *`Boolean`* - Appears on the help command.
@@ -188,10 +188,10 @@ module.exports = {
 >###### `/docs/templates/event.js`
 * **`name`**: *`String`* - The event name. (`/core/constants/events.json`)
 * **`run`**: *`Function`* - The function ran on an event. (params: `client`, other)
-    * *`Paramter`* - Discord event listener parameters. (`/core/constants/events.json`)
+    * *`Parameter`* - Discord event listener parameters. (`/core/constants/events.json`)
 ##### [back to top](#index)
 ## Status
-### Use this emplate to add a status to the bot.
+### Use this template to add a status to the bot.
 ```json
 [
     {
@@ -210,9 +210,9 @@ module.exports = {
 * Set interval in `/.secrets.json`.
 ##### [back to top](#index)
 ## Website
-* The defult content sent to the website is your support servers `iframe`.
-    * If you did not set your support servers `iframe` the defult is the official disacord support server `iframe`.
-    * Set the support server id in `/.secrets.json` (defult: https://discord.com/widget?id=854114095929491456&theme=dark).
+* The default content sent to the website is your support servers `iframe`.
+    * If you did not set your support servers `iframe` the default is the official disaccord support server `iframe`.
+    * Set the support server id in `/.secrets.json` (default: https://discord.com/widget?id=854114095929491456&theme=dark).
 * The website does not initiate if there is no port found.
     * Set the port in `/.secrets.json`.
 ### Remote logger
@@ -225,7 +225,7 @@ const port = null;
 const endpoint = "/";
 ```
 >###### `core\utilities\logger.js`
-* **`secure`**: *`Boolean`* - If the website starts with https then it is secute and `secure` should be set to `true`.
+* **`secure`**: *`Boolean`* - If the website starts with https then it is secure and `secure` should be set to `true`.
 * **`ip`**: *`String`* - A machine ip address to send requests to.
 * **`domain`**: *`String`* - A domain name to send requests to.
 * **`port`**: *`Integer`* - A port number if there is one. (not `80`)
@@ -238,32 +238,32 @@ const app = express();
 const port = 80;
 
 app.get("/",(req, res) => {
-	try {
-    	console.log(decodeURIComponent(req.query.data ? req.query.data : "NO DATA"));
-		res.json({ code: "200" });
-	} catch (error) {
-		console.log(error);
-		res.json({ code:"500" });
-	};
+    try {
+        console.log(decodeURIComponent(req.query.data ? req.query.data : "NO DATA"));
+        res.json({ code: "200" });
+    } catch (error) {
+        console.log(error);
+        res.json({ code:"500" });
+    };
 });
 
 app.listen(port);
 ```
 >###### `https://github.com/aroary/remote_logger_utility`
-* Clone the code from the `https://github.com/aroary/remote_logger_utility` package to recieve log requests.
+* Clone the code from the `https://github.com/aroary/remote_logger_utility` package to receive log requests.
 * **`port`**: *`Integer`* - If you set a different port you may need to update in `core/utilities/logger.js`.
 ##### [back to top](#index)
 ## Data
 * **activities**: `core\constants\activities.json`.
 * **permissions**: `core\constants\permissions.json`.
 * **Events**: `core\constants\events.json`.
-    * > ⚠️ Events may not be 100% accurate, please report innacurcy to that we can fix it.
+    * > ⚠️ Events may not be 100% accurate, please report inaccuracy to that we can fix it.
 ##### [back to top](#index)
 ___
 >### Thank you for using this package for your bot, it means that my hard work is not for nothing!
->### If you have anything to say, feadback is welcomed and appreciated.
+>### If you have anything to say, feedback is welcomed and appreciated.
 >### Please report any bugs or errors, we want to make sure our package is as healthy as possible!
->>* #### If you nead any additional help or assistance you are welcome to join our support server. [Join](https://discord.gg/BHtNSq5bq2)
+>>* #### If you need any additional help or assistance you are welcome to join our support server. [Join](https://discord.gg/BHtNSq5bq2)
 >>* #### If you want to see an example of a real bot using this package you can now invite our bot. [Invite](https://discord.com/oauth2/authorize?client_id=852018638369062913&scope=bot&permissions=8)
 >***`aroary`***
 ##### [back to top](#index)
