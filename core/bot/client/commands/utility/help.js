@@ -56,7 +56,7 @@ module.exports = {
                                 { name: "Usage:", value: command.config.info.usage, inline: true },
                                 { name: "Aliases:", value: command.config.info.aliases.length > 0 ? command.config.info.aliases.join(", ") : "No aliases.", inline: true }
                             )
-                            .setFooter(client.config.prefix, "https://cdn.discordapp.com/attachments/766316423306805269/855158055889010689/keyword-research-xxl.png")
+                            .setFooter(client.config.prefix)
                             .setTimestamp()
                         message.channel.send(commandHelp);
                     };
