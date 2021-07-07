@@ -37,5 +37,6 @@ module.exports = {
     ready: client => log(`[${moment()}]: ${chalk.bgGreen("READY     ")} ${client.user.username} is online in ${client.guilds.cache.size} servers for ${client.users.cache.size} users!`),
     presence: (type, name) => log(`[${moment()}]: ${chalk.bgBlue("STATUS    ")} ${type} ${name}`),
     alarm: data => log(`[${moment()}]: ${chalk.bgMagenta("ALARM     ")} ${data}`),
+    reaction: data => log(`[${moment()}]: ${chalk.bgMagenta("REACTION  ")} ${data}`),
     url
 };

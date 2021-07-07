@@ -10,17 +10,19 @@ module.exports = {
      */
     run: (client, reaction, user) => {
         // Return if the reactor is our client.
-        if (user.id === client.user.id) return
+        if (user.id === client.user.id) return;
+        if (user.bot)return;
 
         // Reactions
         if (client.reactions) {
             // Find our reaction trigger.
-            const trigger = client.reactions.get(reaction.emoji);
+            const trigger = client.reactions.get(reaction.emoji.name);
 
             // Run our reaction trigger if we have one.
             if (client.online && trigger) {
-                trigger.run(client, reaction, user);
+                trigger.execute(client, reaction, user);
+                client.log.reaction(`${user.username} Reacted with ${reaction.emoji.name}`);
             };
-        } else return client.log.warn("No reactions found.");
+        };
     }
 };

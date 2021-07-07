@@ -10,9 +10,6 @@ module.exports = {
      * @param {Discord.User} user 
      */
     execute: (client, reaction, user) => {
-        reaction.message.channel.send(reaction.emoji.name)
-            .then(message => {
-                message.delete({ timeout: 5000, reason: "testing" })
-            });
+        reaction.message.react("✅");
     }
 };

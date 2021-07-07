@@ -22,10 +22,12 @@ module.exports = {
     execute: (client, message, args) => {
         if (client.online) {
             client.online = false;
-            message.channel.send("Bot Disabled");
             client.user.setPresence({ activity: { type: "STREAMING", name: "Busy" }, status: 'dnd' })
+            client.login.warn("Bot Disabled");
+            message.channel.send("Bot Disabled");
         } else {
             client.online = true;
+            client.login.warn("Bot Enabled");
             message.channel.send("Bot Enabled");
         };
     }
