@@ -1,17 +1,4 @@
 [
-<<<<<<< HEAD
-    {"type":"PLAYING", "name":"i guess"},
-    {"type":"LISTENING", "name":"{users} users"},
-    {"type":"PLAYING", "name":"in {servers} servers"},
-    {"type":"PLAYING", "name":"with fire"},
-    {"type":"LISTENING", "name":"you"},
-    {"type":"WATCHING", "name":"your every move"},
-    {"type":"LISTENING", "name":"my GPS"}
-=======
-    {
-        "type": "PLAYING",
-        "name": "i guess"
-    },
     {
         "type": "LISTENING",
         "name": "{users} users"
@@ -20,5 +7,4 @@
         "type": "PLAYING",
         "name": "in {servers} servers"
     }
->>>>>>> 8f7de3cfea72adb75debd457bef61f69a40b11cc
 ]
