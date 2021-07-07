@@ -19,13 +19,10 @@ module.exports = {
             // Find our reaction trigger.
             const trigger = client.reactions.get(reaction.emoji.name);
 
-            // Check for permissions.
-            const check = permission(message.guild.me, message.member, cmdFile.config.info.permissions);
-
             // Run our reaction trigger if we have one.
             if (client.online && trigger) {
                 // Check for permissions.
-                const check = permission(message.guild.me, message.member, cmdFile.config.info.permissions);
+                const check = permission(reaction.message.guild.me,reaction.message.member, trigger.config.permissions);
                 if(check)return;
 
                 // Run the execute function.
