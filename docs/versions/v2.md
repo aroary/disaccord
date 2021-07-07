@@ -36,14 +36,17 @@ ___
     "version": "2.12.15.46"
 }
 ```
->###### /.secrets.json
+>###### `/.secrets.json`
 * **`token`**: *`String`* - The token used for logging in the bot goes here.
 * **`prefix`**: *`String`* - The prefix for the bot. (prefix is used with the command to run it)
 * **`port`**: *`Intiger`* - The port number for the webapp to listen at. (`80` for defult, `null` for no webapp)
 * **`statusInverval`**: *`Intiger`* - The interval to set a new status (milliseconds)
 * **`owners`**: *`Array`* - The owners of the bot have access to all commands.
+    * *`String`* - User ID
 * **`developers`**: *`Array`* - The developers of the bot have access to everything.
+    * *`String`* - User ID
 * **`testers`**: *`Array`* - The testers of the bot have access to some special features.
+    * *`String`* - User ID
 * **`supportServer`**: *`String`* - Support server for the bot.
 * **`description`**: *`String`* - A description of the bot to display.
 * **`version`**: *`String`* - The version of this command handler (latest is `2`)
@@ -77,13 +80,15 @@ module.exports = {
     }
 };
 ```
->###### /docs/templates/command.js
+>###### `/docs/templates/command.js`
 * **`info`**: *`Object`* - Information about the command.
     * **`name`**: *`String`* - The name of the command. (this will run the command)
     * **`usage`**: *`String`* - How the command is used. (without the prefix in front)
     * **`description`**: *`String`* - What the command does.
     * **`aliases`**: *`Array`* - Other names for the command. (these will also run the command)
+        * *`String`* - Secondarry names.
     * **`permissions`**: *`Array`* - The permissons required for the bot and user to run the command. (checks for each (bot and user))
+        * *`String`* - Discord permissions. (`/core/constants/permissions.json`)
 * **`availability`**: *`Object`* - Limits to the command.
     * **`find`**: *`Boolean`* - Appears on the help command.
     * **`public`**: *`Boolean`* - Can be ran by anyone (with permissions)
@@ -130,11 +135,12 @@ module.exports = {
     }
 };
 ```
->###### /docs/templates/trigger.js
+>###### `/docs/templates/trigger.js`
 * **`info`**: *`Object`* - Information about the trigger.
     * **`name`**: *`String`* - The name of the trigger. (used to trigger the trigger) 
     * **`description`**: *`String`* - A description of the trigger.
     * **`permissions`**: *`Array`* - The required permissions to execute the trigger. (checks for each (bot and user))
+        * *`String`* - Discord permissions. (`/core/constants/permissions.json`)
 * **`availability`**: *`Object`* - Limitations of the trigger.
     * **`find`**: *`Boolean`* - Can be found on the help command.
     * **`public`**: *`Boolean`* - Can be used by anyone with permissions.
@@ -160,9 +166,10 @@ module.exports = {
     }
 };
 ```
->###### /docs/templates/reaction.js
+>###### `/docs/templates/reaction.js`
 * **`emoji`**: *`String`* - The actual emoji. (you may need to copy and past)
 * **`permissions`**: *`Array`* - The required permissions to execute the reaction. (checks for each (bot and user))
+    * *`String`* - Discord permissions. (`/core/constants/permissions.json`)
 ##### [back to top](#index)
 ## Events
 ### Use this template to make and add events.
@@ -178,9 +185,10 @@ module.exports = {
     }
 };
 ```
->###### /docs/templates/event.js
-* **`name`**: *`String`* - The event name.
+>###### `/docs/templates/event.js`
+* **`name`**: *`String`* - The event name. (`/core/constants/events.json`)
 * **`run`**: *`Function`* - The function ran on an event. (params: `client`, other)
+    * *`Paramter`* - Discord event listener parameters. (`/core/constants/events.json`)
 ##### [back to top](#index)
 ## Status
 ### Use this emplate to add a status to the bot.
@@ -196,8 +204,8 @@ module.exports = {
     }
 ]
 ```
->###### core\utilities\status\presences.json
-* **`type`**: *`String`* - The type of status (`core\constants\activities.json`)
+>###### `/core/utilities/status/presences.json`
+* **`type`**: *`String`* - The type of status (`/core/constants/activities.json`)
 * **`name`**: *`String`* - The data shown in the status. (replace {users} with user count and {servers} with server count)
 * Set interval in `/.secrets.json`.
 ##### [back to top](#index)
@@ -216,6 +224,7 @@ const domain = "logs.aroary.repl.co";
 const port = null;
 const endpoint = "/";
 ```
+>###### `core\utilities\logger.js`
 * **`secure`**: *`Boolean`* - If the website starts with https then it is secute and `secure` should be set to `true`.
 * **`ip`**: *`String`* - A machine ip address to send requests to.
 * **`domain`**: *`String`* - A domain name to send requests to.
@@ -223,10 +232,32 @@ const endpoint = "/";
 * **`endpoint`**: *`String`* - The end of the url (filepath). (`"/"` will be treated as an empty string.)
 * If there is no `ip` and no `domain` then the logger will not send any requests.
     * The `ip` address will be used if there is both an `ip` and `domain`.
+```javascript
+const express = require("express");
+const app = express();
+const port = 80;
+
+app.get("/",(req, res) => {
+	try {
+    	console.log(decodeURIComponent(req.query.data ? req.query.data : "NO DATA"));
+		res.json({ code: "200" });
+	} catch (error) {
+		console.log(error);
+		res.json({ code:"500" });
+	};
+});
+
+app.listen(port);
+```
+>###### `https://github.com/aroary/remote_logger_utility`
+* Clone the code from the `https://github.com/aroary/remote_logger_utility` package to recieve log requests.
+* **`port`**: *`Integer`* - If you set a different port you may need to update in `core/utilities/logger.js`.
 ##### [back to top](#index)
 ## Data
 * **activities**: `core\constants\activities.json`.
 * **permissions**: `core\constants\permissions.json`.
+* **Events**: `core\constants\events.json`.
+    * > ⚠️ Events may not be 100% accurate, please report innacurcy to that we can fix it.
 ##### [back to top](#index)
 ___
 >### Thank you for using this package for your bot, it means that my hard work is not for nothing!

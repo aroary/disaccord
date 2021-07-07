@@ -3,6 +3,8 @@ const moment = () => {
     return require("moment")().format('YYYY-MM-DD HH:mm:ss');
 };
 
+// Requires package https://github.com/aroary/remote_logger_utility for custom endpoint.
+
 // Build url.
 const secure = true;
 const ip = "";
