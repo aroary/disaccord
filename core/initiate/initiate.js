@@ -14,9 +14,6 @@ module.exports = (client) => {
     // Load reactions.
     require("./reactions")(client);
 
-    // Load alarms.
-    require("./alarms")(client);
-
     // Load events.
     require("./events")(client);
 
