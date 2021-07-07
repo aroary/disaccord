@@ -20,10 +20,9 @@ function setStatus(client) {
             client.log.presence(presence.activities[0].type, presence.activities[0].name);
         });
 };
-module.exports = (client) => {
+module.exports = client => {
     // On ready, set the status.
     setStatus(client);
-
     // Loop through the Array of presences.
     setInterval(() => {
         // Check if we want a new presence.
