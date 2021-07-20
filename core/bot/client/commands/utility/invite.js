@@ -4,8 +4,8 @@ module.exports = {
         info: {
             name: "invite",
             usage: "invite",
-            description: "invite the bot",
-            aliases: [],
+            description: "invite the bot 🎀",
+            aliases: ["link"],
             permissions: ["SEND_MESSAGES"]
         },
         availability: {
@@ -23,11 +23,5 @@ module.exports = {
         const invite = new Discord.MessageEmbed()
             .setDescription(`Click [here](https://discord.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=8) to invite me to your server`)
         message.channel.send(invite);
-
-        // Get inviters guild invite.
-        message.guild.fetchInvites()
-            .then(invites => {
-                client.log.log(`Invite code found: https://discord.gg/${invites.array()[0].code}`);
-            });
     }
 };

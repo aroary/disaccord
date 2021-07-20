@@ -4,7 +4,7 @@ module.exports = {
         info: {
             name: "help",
             usage: "help (type | category | command | alias)",
-            description: "Get information about the bot",
+            description: "Get information about the bot 🔮",
             aliases: ["commands", "triggers", "reactions"],
             permissions: ["SEND_MESSAGES"]
         },
