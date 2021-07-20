@@ -5,15 +5,15 @@ module.exports = {
         info: {
             name: "process",
             usage: "process",
-            description: "Get the process info and performance data",
+            description: "Get the process info and performance data 🖥️",
             aliases: ["memory", "cpu"],
             permissions: ["SEND_MESSAGES"]
         },
         /**
-     * @param {Discord.Client} client - Your client 
-     * @param {Discord.Message} message - The message
-     * @param {Array} args - The message arguments (mesage.content.split(" "))
-     */
+         * @param {Discord.Client} client - Your client 
+         * @param {Discord.Message} message - The message
+         * @param {Array} args - The message arguments (mesage.content.split(" "))
+         */
         availability: {
             find: false,
             public: false,
