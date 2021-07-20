@@ -4,7 +4,7 @@ module.exports = {
         info: {
             name: "dnd",
             usage: "dnd",
-            description: "Put the bot offline",
+            description: "Put the bot offline 🛌",
             aliases: [],
             permissions: ["SEND_MESSAGES"]
         },
@@ -22,13 +22,14 @@ module.exports = {
     execute: (client, message, args) => {
         if (client.online) {
             client.online = false;
-            client.user.setPresence({ activity: { type: "STREAMING", name: "Busy" }, status: 'dnd' })
-            client.login.warn("Bot Disabled");
-            message.channel.send("Bot Disabled");
+            client.user.setPresence({ activity: { type: "STREAMING", name: "Disabled ✋😒" }, status: 'dnd' })
+            client.log.warn("Bot Disabled");
+            message.channel.send("Bot **Disabled**");
         } else {
             client.online = true;
-            client.login.warn("Bot Enabled");
-            message.channel.send("Bot Enabled");
+            client.user.setPresence({ activity: { type: "STREAMING", name: "Enabled ✌️😀" }, status: 'idle' })
+            client.log.warn("Bot Enabled");
+            message.channel.send("Bot **Enabled**");
         };
     }
 };
