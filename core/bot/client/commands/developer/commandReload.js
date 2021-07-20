@@ -5,7 +5,7 @@ module.exports = {
         info: {
             name: "commandreload",
             usage: "commandreload <command(s)>",
-            description: "Reload and reset a command",
+            description: "Reload and reset a command ➰",
             aliases: [],
             permissions: ["SEND_MESSAGES"]
         },
