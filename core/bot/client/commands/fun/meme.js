@@ -4,7 +4,7 @@ module.exports = {
         info: {
             name: "meme",
             usage: "meme",
-            description: "Get a random meme!",
+            description: "Get a random meme 🤣",
             aliases: [],
             permissions: []
         },

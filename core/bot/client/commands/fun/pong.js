@@ -5,7 +5,7 @@ module.exports = {
         info: {
             name: "pong",
             usage: "pong",
-            description: "pong the bot",
+            description: "pong the bot 📶",
             aliases: [],
             permissions: ["SEND_MESSAGES"]
         },
