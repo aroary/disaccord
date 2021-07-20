@@ -102,7 +102,7 @@ module.exports = {
                             if (available.public || client.config.testers.includes(message.author.id)) {
                                 // check for client permissions (coming soon)
                                 trigger.execute(client, message, args);
-                                client.log.command(`${message.author.username} triggered ${trigger.config.info.name}`);
+                                client.log.trigger(`${message.author.username} triggered ${trigger.config.info.name}`);
                             } else return;
                         };
                     };
