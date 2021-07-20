@@ -1,6 +1,11 @@
+const Discord = require("discord.js");
 const status = require("./presences.json");
 
 // Set the status.
+/**
+ * @param {Discord.Client} client - The client
+ * @fires setPresence
+ */
 function setStatus(client) {
     // Loop the Array.
     const then = status[0];
@@ -20,6 +25,10 @@ function setStatus(client) {
             client.log.presence(presence.activities[0].type, presence.activities[0].name);
         });
 };
+/**
+ * @description Sets the presence of the client.
+ * @param {Discord.Client} client - The client.
+ */
 module.exports = client => {
     // On ready, set the status.
     setStatus(client);
