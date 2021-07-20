@@ -5,9 +5,10 @@ module.exports = {
         permissions: ["ADD_REACTIONS"]
     },
     /**
-     * @param {Discord.Client} client 
-     * @param {Discord.MessageReaction} reaction 
-     * @param {Discord.User} user 
+     * @param {Discord.Client} client - The client.
+     * @param {Discord.MessageReaction} reaction - The reaction data
+     * @param {Discord.User} user - The user who reacted
+     * @author aroary
      */
     execute: (client, reaction, user) => {
         reaction.message.react("✅");
