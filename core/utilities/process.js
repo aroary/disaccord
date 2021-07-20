@@ -1,7 +1,9 @@
 const Discord = require("discord.js");
 /**
- * 
+ * @description Builds a satring with all the node process data
  * @param {Discord.Message} message - the message
+ * @fires send
+ * @author aroary
  */
 module.exports = (message) => {
     const p = process.cpuUsage();
