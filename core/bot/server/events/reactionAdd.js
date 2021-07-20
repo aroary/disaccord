@@ -12,7 +12,7 @@ module.exports = {
     run: (client, reaction, user) => {
         // Return if the reactor is our client.
         if (user.id === client.user.id) return;
-        if (user.bot)return;
+        if (user.bot) return;
 
         // Reactions
         if (client.reactions) {
@@ -22,8 +22,7 @@ module.exports = {
             // Run our reaction trigger if we have one.
             if (client.online && trigger) {
                 // Check for permissions.
-                const check = permission(reaction.message.guild.me,reaction.message.member, trigger.config.permissions);
-                if(check)return;
+                if (reaction.message.guild) if (permission(reaction.message.guild.me, reaction.message.member, trigger.config.permissions)) return;
 
                 // Run the execute function.
                 trigger.execute(client, reaction, user);
