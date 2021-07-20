@@ -4,7 +4,7 @@ module.exports = {
         info: {
             name: "embed",
             usage: "embed <JSON>",
-            description: "Create a message embed with raw json",
+            description: "Create a message embed with raw json 🔨",
             aliases: [],
             permissions: ["SEND_MESSAGES"]
         },

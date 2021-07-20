@@ -4,7 +4,7 @@ module.exports = {
         info: {
             name: 'wiki',
             usage: 'wiki <query>',
-            description: 'Get data from wikipidia.',
+            description: 'Get data from wikipidia 📓',
             aliases: ["wikipidia", "search"],
             permissions: ["SEND_MESSAGES"]
         },
