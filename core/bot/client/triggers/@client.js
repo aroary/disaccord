@@ -24,13 +24,15 @@ module.exports = {
                 const me = new Discord.MessageEmbed()
                     .setTitle(client.user.username)
                     .setAuthor(client.user.tag, client.user.avatarURL())
-                    .setThumbnail(client.user.avatarURL())
+                    // .setThumbnail(client.user.avatarURL())
+                    // .setImage(client.user.avatarURL())
                     .addFields(
                         { name: "Prefix:", value: "`" + client.config.prefix + "`", inline: true },
                         { name: "Invite:", value: `Click [here](https://discord.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=8)!`, inline: true },
-                        { name: "Help:", value: `${client.config.prefix}help`, inline: true }
+                        { name: "Help:", value: `\`${client.config.prefix}help\`.`, inline: true }
                     )
                     .setDescription(client.config.description)
+                    .setFooter(`v${client.config.version.split(".")[0]}`, client.users.cache.get(client.config.owners[0]).avatarURL())
                     .setTimestamp();
 
                 if (message.content.length < 30) message.channel.send(me);
