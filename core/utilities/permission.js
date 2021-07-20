@@ -4,7 +4,7 @@ const perms = require('../constants/permissions');
  * @param {Discord.Client} client - Client to check
  * @param {Discord.GuildMember} member - Member to check
  * @param {Array} permission - Array of permissions
- * @returns Returns false if client and member have all requred permissions.
+ * @returns {Array} Returns false if client and member have all requred permissions.
  */
 module.exports = (client, member, permission) => {
     const missing = { user: [], client: [] };
