@@ -1,8 +1,11 @@
 const Discord = require('discord.js');
 module.exports = {
-    name: "name",
+    config:{
+        name: "name"
+    },
     /**
-     * @param {Discord.Client} client - Your client 
+     * @param {Discord.Client} client - Your client
+     * @template
      */
     run: (client/*, other events*/) => {
         // code

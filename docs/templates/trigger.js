@@ -16,7 +16,9 @@ module.exports = {
     /**
      * @param {Discord.Client} client 
      * @param {Discord.Message} message 
-     * @param {Array} args - The message arguments (message.content.split(" ")) 
+     * @param {Array} args - The message arguments
+     * @event message
+     * @template
      */
     execute: (client, message, args) => {
         // Code
