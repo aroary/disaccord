@@ -4,15 +4,15 @@
 [![made-with-javascript](https://img.shields.io/badge/Made%20with-JavaScript-1f425f.svg)](https://www.javascript.com)
 [![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/aroary/disaccord)
 [![GitHub release](https://img.shields.io/github/v/release/aroary/disaccord.svg)](https://GitHub.com/aroary/disaccord/releases/)
+[![Profile views](https://gpvc.arturio.dev/aroary)](https://github.com/aroary)
 
 <!-- [![GitHub commits](https://img.shields.io/github/commits-since/aroary/disaccord/v1.0.0.svg)](https://GitHub.com/aroary/disaccord/commit/) -->
 <!-- [![Github all releases](https://img.shields.io/github/downloads/aroary/disaccord/total.svg)](https://GitHub.com/aroary/disaccord/releases/) -->
 
-[![GitHub forks](https://img.shields.io/github/forks/aroary/disaccord.svg?style=social&label=Fork&maxAge=2592000)](https://GitHub.com/aroary/disaccord/network/)
+<!-- [![GitHub forks](https://img.shields.io/github/forks/aroary/disaccord.svg?style=social&label=Fork&maxAge=2592000)](https://GitHub.com/aroary/disaccord/network/) -->
 [![GitHub stars](https://img.shields.io/github/stars/aroary/disaccord.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/aroary/disaccord/stargazers/)
 [![GitHub watchers](https://img.shields.io/github/watchers/aroary/disaccord.svg?style=social&label=Watch&maxAge=2592000)](https://GitHub.com/aroary/disaccord/watchers/)
 [![GitHub followers](https://img.shields.io/github/followers/aroary.svg?style=social&label=Follow&maxAge=2592000)](https://github.com/aroary?tab=followers)
-[![Profile views](https://gpvc.arturio.dev/aroary)](https://github.com/aroary)
 
 [![git](https://img.shields.io/badge/--F05032?logo=git&logoColor=ffffff)](http://git-scm.com/)
 [![Visual Studio](https://img.shields.io/badge/--6C33AF?logo=visual%20studio)](https://visualstudio.microsoft.com/)
