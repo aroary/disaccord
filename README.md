@@ -1,3 +1,5 @@
+![badge](https://github.com/aroary/disaccord/actions/workflows/main.yml/badge.svg)
+
 <div id="header" style="text-align:center;">
     <img src="https://cdn.discordapp.com/attachments/806009448597946393/856372173966934026/854412204877807650.png" style="width:25%;">
 </div>
