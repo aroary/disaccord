@@ -13,13 +13,11 @@
 [![GitHub watchers](https://img.shields.io/github/watchers/aroary/disaccord.svg?style=social&label=Watch&maxAge=2592000)](https://GitHub.com/aroary/disaccord/watchers/)
 [![GitHub followers](https://img.shields.io/github/followers/aroary.svg?style=social&label=Follow&maxAge=2592000)](https://github.com/aroary?tab=followers)
 
-[![git](https://img.shields.io/badge/--F05032?logo=git&logoColor=ffffff)](http://git-scm.com/)
-[![Visual Studio](https://img.shields.io/badge/--6C33AF?logo=visual%20studio)](https://visualstudio.microsoft.com/)
 [![Discord](https://img.shields.io/discord/854114095929491456.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/BHtNSq5bq2)
+[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/aroary/disaccord)
 
 <!-- [![Awesome Badges](https://img.shields.io/badge/NAME-WALUE-green.svg)](https://github.com/Naereen/badges) -->
 
-[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/aroary/disaccord)
 
 <div id="header" style="text-align:center;">
     <img src="https://cdn.discordapp.com/attachments/806009448597946393/856372173966934026/854412204877807650.png" style="width:25%;">
