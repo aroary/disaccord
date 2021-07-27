@@ -286,7 +286,7 @@ ___
 >>* #### If you need any additional help or assistance you are welcome to join our support server. [Join](https://discord.gg/BHtNSq5bq2)
 >>* #### If you want to see an example of a real bot using this package you can now invite our bot. [Invite](https://discord.com/oauth2/authorize?client_id=852018638369062913&scope=bot&permissions=8)
 >***`aroary`***
->[![Profile views](https://gpvc.arturio.dev/aroary)](https://github.com/aroary)
+>>[![Profile views](https://gpvc.arturio.dev/aroary)](https://github.com/aroary)
 ##### [back to top](#index)
 
 <div id="header" style="text-align:center;">
