@@ -3,7 +3,6 @@
 ![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)
 [![made-with-javascript](https://img.shields.io/badge/Made%20with-JavaScript-1f425f.svg)](https://www.javascript.com)
 [![GitHub release](https://img.shields.io/github/v/release/aroary/disaccord.svg)](https://GitHub.com/aroary/disaccord/releases/)
-[![Profile views](https://gpvc.arturio.dev/aroary)](https://github.com/aroary)
 
 <!-- [![GitHub commits](https://img.shields.io/github/commits-since/aroary/disaccord/v1.0.0.svg)](https://GitHub.com/aroary/disaccord/commit/) -->
 <!-- [![Github all releases](https://img.shields.io/github/downloads/aroary/disaccord/total.svg)](https://GitHub.com/aroary/disaccord/releases/) -->
@@ -287,6 +286,7 @@ ___
 >>* #### If you need any additional help or assistance you are welcome to join our support server. [Join](https://discord.gg/BHtNSq5bq2)
 >>* #### If you want to see an example of a real bot using this package you can now invite our bot. [Invite](https://discord.com/oauth2/authorize?client_id=852018638369062913&scope=bot&permissions=8)
 >***`aroary`***
+>[![Profile views](https://gpvc.arturio.dev/aroary)](https://github.com/aroary)
 ##### [back to top](#index)
 
 <div id="header" style="text-align:center;">
