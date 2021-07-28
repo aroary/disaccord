@@ -10,7 +10,6 @@
 <!-- [![GitHub forks](https://img.shields.io/github/forks/aroary/disaccord.svg?style=social&label=Fork&maxAge=2592000)](https://GitHub.com/aroary/disaccord/network/) -->
 [![GitHub stars](https://img.shields.io/github/stars/aroary/disaccord.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/aroary/disaccord/stargazers/)
 [![GitHub watchers](https://img.shields.io/github/watchers/aroary/disaccord.svg?style=social&label=Watch&maxAge=2592000)](https://GitHub.com/aroary/disaccord/watchers/)
-[![GitHub followers](https://img.shields.io/github/followers/aroary.svg?style=social&label=Follow&maxAge=2592000)](https://github.com/aroary?tab=followers)
 
 [![Discord](https://img.shields.io/discord/854114095929491456.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/BHtNSq5bq2)
 [![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/aroary/disaccord)
