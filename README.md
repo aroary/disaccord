@@ -8,8 +8,8 @@
 <!-- [![Github all releases](https://img.shields.io/github/downloads/aroary/disaccord/total.svg)](https://GitHub.com/aroary/disaccord/releases/) -->
 
 <!-- [![GitHub forks](https://img.shields.io/github/forks/aroary/disaccord.svg?style=social&label=Fork&maxAge=2592000)](https://GitHub.com/aroary/disaccord/network/) -->
-[![GitHub stars](https://img.shields.io/github/stars/aroary/disaccord.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/aroary/disaccord/stargazers/)
-[![GitHub watchers](https://img.shields.io/github/watchers/aroary/disaccord.svg?style=social&label=Watch&maxAge=2592000)](https://GitHub.com/aroary/disaccord/watchers/)
+<!-- [![GitHub stars](https://img.shields.io/github/stars/aroary/disaccord.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/aroary/disaccord/stargazers/) -->
+<!-- [![GitHub watchers](https://img.shields.io/github/watchers/aroary/disaccord.svg?style=social&label=Watch&maxAge=2592000)](https://GitHub.com/aroary/disaccord/watchers/) -->
 
 [![Discord](https://img.shields.io/discord/854114095929491456.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/BHtNSq5bq2)
 [![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/aroary/disaccord)
