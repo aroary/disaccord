@@ -1,0 +1,31 @@
+{
+  "name": "disaccord",
+  "version": "3.0.0",
+  "description": "Discord bot template",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aroary/disaccord.git"
+  },
+  "keywords": [
+    "discord",
+    "bot"
+  ],
+  "author": "aroary",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aroary/disaccord/issues"
+  },
+  "homepage": "https://github.com/aroary/disaccord#readme",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "discord.js": "^13.1.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "moment": "^2.29.1",
+    "socket.io": "^4.1.3"
+  }
+}
