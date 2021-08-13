@@ -1,4 +1,4 @@
-![badge](https://github.com/aroary/disaccord/actions/workflows/main.yml/badge.svg)
+<!-- ![badge](https://github.com/aroary/disaccord/actions/workflows/main.yml/badge.svg) -->
 [![GitHub release](https://img.shields.io/github/v/release/aroary/disaccord.svg)](https://GitHub.com/aroary/disaccord/releases/)
 [![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/aroary/disaccord)
 [![Discord](https://img.shields.io/discord/854114095929491456.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/BHtNSq5bq2)
@@ -13,7 +13,8 @@
     "redeploy": true,
     "prefix": "PREFIX",
     "developer": ["DEVELOPER_ID"],
-    "statusInterval": 60000
+    "statusInterval": 60000,
+    "version": "3.0.1"
 }
 ```
 * **`token`**: *`String`* The bots login *token*.
@@ -23,22 +24,15 @@
 * **`prefix`**: *`String`* The *prefix* used to execute commands.
 * **`developer`**: *`Array`* The *developers* of the bot.
 * **`statusInterval`**: *`Number`* The *interval* to cycle to the next value in the *status* array.
+* **`version`**: *`String`* Ther version of your the bot.
 ## Requirements
-* Node:
-    * The Discord bot api requires the `^v14.0.0` of Node.js
-* npm packages:
-    * chalk@4.1.2
-    * discord.js@13.0.1
-    * express@4.17.1
-    * moment@2.29.1
-### Download Node.js
-### Use `npm i PACKAGENAME@VERSION` in the *Command Prompt* to install packages.
+* [Node.js](https://nodejs.org/en/) `^14.17.5`
 ## Details
-### Join the discord server!
+### [Join](https://discord.gg/BHtNSq5bq2) the discord server!
 ##### You can ask for help, report problem and help others in our discord server!
-### Invite our defult bot!
+### [Invite](https://discord.com/api/oauth2/authorize?client_id=852018638369062913&permissions=8&scope=bot%20applications.commands) our defult bot!
 ##### You can invite our defult discord bot to your server to see that this code works!
 ___
-### Template by aroary
+### Template by [aroary](https://github.com/aroary)
 [![Profile views](https://gpvc.arturio.dev/aroary)](https://github.com/aroary)
-###### MIT License | Copyright (c) 2021 aroary
+###### MIT License | Copyright Ⓒ 2021 aroary
