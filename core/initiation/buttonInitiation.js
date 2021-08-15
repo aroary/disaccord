@@ -1,7 +1,8 @@
 /**
- * @file Button initiation handler.
+ * @file Button initiation.
  * @author aroary
  * @license MIT
+ * @copyright Ⓒ 2021 aroary
  */
 
 const discord = require("discord.js");

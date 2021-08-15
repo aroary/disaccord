@@ -1,6 +1,8 @@
 /**
- * @file Log function utility
+ * @file Log function utility.
  * @author aroary
+ * @license MIT
+ * @copyright Ⓒ 2021 aroary
  */
 
 const moment = require("moment");

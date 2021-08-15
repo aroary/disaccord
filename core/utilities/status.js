@@ -1,6 +1,8 @@
 /**
  * @file Status function for setting the clients status.
  * @author aroary
+ * @license MIT
+ * @copyright Ⓒ 2021 aroary
  */
 
 const disocrd = require("discord.js");

@@ -2,6 +2,7 @@
  * @file Slash command initiation handler.
  * @author aroary
  * @license MIT
+ * @copyright Ⓒ 2021 aroary
  */
 
 const discord = require("discord.js");

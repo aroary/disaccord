@@ -1,6 +1,8 @@
 /**
  * @file Initiation of initiation.
  * @author aroary
+ * @license MIT
+ * @copyright Ⓒ 2021 aroary
  */
 
 const discord =  require("discord.js");
@@ -21,6 +23,9 @@ function initiate(client) {
             require(`../initiation/${file}`)(client);
         });
     });
+
+    // Other initiation files.
+    require("./status")(client);
 };
 
 module.exports = initiate;

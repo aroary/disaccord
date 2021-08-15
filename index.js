@@ -1,9 +1,8 @@
 /**
  * @file Main file for running your discord bot.
  * @author aroary
- * @license MIT License
+ * @license MIT
  * @copyright Ⓒ 2021 aroary
- * @requires ^14.17.5 Nodejs
  */
 
 const discord = require("discord.js");

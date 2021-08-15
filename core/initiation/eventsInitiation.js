@@ -1,7 +1,8 @@
 /**
- * @file Event listending initiation handler.
+ * @file Event listending initiation.
  * @author aroary
  * @license MIT
+ * @copyright Ⓒ 2021 aroary
  */
 
 const discord = require("discord.js");
