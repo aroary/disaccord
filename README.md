@@ -36,7 +36,7 @@ ___
 ### [Join](https://discord.gg/BHtNSq5bq2) the discord server!
 ##### You can ask for help, report problem and help others in our discord server!
 ### [Invite](https://discord.com/api/oauth2/authorize?client_id=852018638369062913&permissions=8&scope=bot%20applications.commands) our defult bot!
-##### You can invite our defult discord bot to your server to see that this code works!
+##### You can invite our default discord bot to your server to see that this code works!
 ___
 ### Template by [aroary](https://github.com/aroary)
 [![Profile views](https://gpvc.arturio.dev/aroary)](https://github.com/aroary)
