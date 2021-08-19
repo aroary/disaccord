@@ -12,9 +12,9 @@ function run(client, message) {
     if (message.author.bot) return;
 
     // Check for commands.
-    if (message.content.startsWith(client.secrets.prefix) || message.content.startsWith(`<@${client.user.id}>`)) {
+    if (message.content.startsWith(client.secrets.prefix)) {
         const args = message.content.split` `;
-        const command = message.content.startsWith(`<@${client.user.id}>`) ? args.shift().toLowerCase().slice(client.user.id.length) : args.shift().toLowerCase().slice(client.secrets.prefix.length);
+        const command = args.shift().toLowerCase().slice(client.secrets.prefix.length);
 
         const execute = client.commands.get(command) || client.commands.get(client.aliases.get(command));
         if (execute && (execute.config.available || client.secrets.developers.includes(message.author.id))) {
