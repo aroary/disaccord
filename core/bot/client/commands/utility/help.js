@@ -18,14 +18,15 @@ function run(client, message, args) {
     if (args[0]) {
         const category = categories.get(args[0]) || categories.get(categoryIDs.get(args[0].toUpperCase()));
         const command = commands.get(args[0]) || commands.get(aliases.get(args[0]));
-        const trigger = false;//triggers.get(args[0]);
+        const trigger = triggers.filter(t => t.config.name.toLowerCase() === args[0])[0];
         if (category && category.helpMessage) {
             const cmds = commands.filter(cmd => cmd.category === category.id.toUpperCase() && cmd.config.help).map(cmd => cmd = `**\`${cmd.config.name}\`**: ${cmd.config.description}`).join`\n`;
             const help = new discord.MessageEmbed()
                 .setTitle(category.name)
                 .setDescription(cmds)
+                .setFooter(category.id.toUpperCase())
                 .setTimestamp();
-            // worx
+
             message.channel.send({ embeds: [help] });
         } else if (command && command.config.help) {
             const help = new discord.MessageEmbed()
@@ -36,10 +37,28 @@ function run(client, message, args) {
                     { name: "Aliases:", value: command.config.alias.length ? command.config.alias.join(", ") : "None." },
                     { name: "Permissions:", value: command.config.permission.length ? command.config.permission.join(", ") : "None." }
                 )
+                .setTimestamp();
 
             message.channel.send({ embeds: [help] });
-        } else if (trigger) {
-            // Coming soon!
+        } else if ((trigger && trigger.config.help) || args[0] === "triggers") {
+            if (args[0] === "triggers") {
+                const triggerHelp = triggers.filter(t => t.config.help).map(t => t = `**\`${t.config.name}\`**: ${t.config.description}`).join`\n`;
+                const help = new discord.MessageEmbed()
+                    .setTitle("Triggers")
+                    .setDescription(triggerHelp)
+                    .setTimestamp();
+
+                message.channel.send({ embeds: [help] });
+            } else if (trigger && trigger.config.help) {
+                const t = new discord.MessageEmbed()
+                    .setTitle(trigger.config.name)
+                    .setDescription(trigger.config.description)
+                    .addFields(
+                        { name: "Permissions:", value: trigger.config.permissions.length ? trigger.config.permissions.join(", ") : "None." }
+                    )
+                    .setTimestamp();
+                message.channel.send({ embeds: [t] });
+            };
         } else {
             const notFound = new discord.MessageEmbed()
                 .setAuthor(message.author.tag, message.author.avatarURL())
@@ -51,8 +70,7 @@ function run(client, message, args) {
             message.channel.send({ embeds: [notFound] });
         };
     } else {
-        var embed = new discord.MessageEmbed()
-            .setTitle("Help")
+        var embed = new discord.MessageEmbed().setTitle("Help")
 
         categories.forEach(category => {
             embed.addField(category.name, category.description, true);
@@ -64,10 +82,6 @@ function run(client, message, args) {
 
         message.channel.send({ embeds: [embed] });
     };
-
-    // commands.forEach((value, key) => {
-
-    // })
 };
 
 module.exports = {
