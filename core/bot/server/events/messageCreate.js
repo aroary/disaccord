@@ -86,8 +86,6 @@ function run(client, message) {
             };
         };
     });
-
-    new Entry("message", message.content).setColor("orange", "black").log();
 };
 
 module.exports = { name: "messageCreate", run };
