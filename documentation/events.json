@@ -1,0 +1,419 @@
+[
+    {
+        "name": "applicationCommandCreate",
+        "value": [
+            "command"
+        ]
+    },
+    {
+        "name": "applicationCommandDelete",
+        "value": [
+            "command"
+        ]
+    },
+    {
+        "name": "applicationCommandUpdate",
+        "value": [
+            "oldCommand",
+            "newCommand"
+        ]
+    },
+    {
+        "name": "channelCreate",
+        "value": [
+            "channel"
+        ]
+    },
+    {
+        "name": "channelDelete",
+        "value": [
+            "channel"
+        ]
+    },
+    {
+        "name": "channelPinsUpdate",
+        "value": [
+            "channel",
+            "date"
+        ]
+    },
+    {
+        "name": "debug",
+        "value": [
+            "message"
+        ]
+    },
+    {
+        "name": "emojiCreate",
+        "value": [
+            "emoji"
+        ]
+    },
+    {
+        "name": "emojiDelete",
+        "value": [
+            "emoji"
+        ]
+    },
+    {
+        "name": "emojiUpdate",
+        "value": [
+            "oldEmoji",
+            "newEmoji"
+        ]
+    },
+    {
+        "name": "error",
+        "value": [
+            "error"
+        ]
+    },
+    {
+        "name": "guildBanAdd",
+        "value": [
+            "ban"
+        ]
+    },
+    {
+        "name": "guildBanRemove",
+        "value": [
+            "ban"
+        ]
+    },
+    {
+        "name": "guildCreate",
+        "value": [
+            "guild"
+        ]
+    },
+    {
+        "name": "guildDelete",
+        "value": [
+            "guild"
+        ]
+    },
+    {
+        "name": "guildIntegrationsUpdate",
+        "value": [
+            "guild"
+        ]
+    },
+    {
+        "name": "guildMemberAdd",
+        "value": [
+            "member"
+        ]
+    },
+    {
+        "name": "guildMemberAvailable",
+        "value": [
+            "member"
+        ]
+    },
+    {
+        "name": "guildMemberRemove",
+        "value": [
+            "member"
+        ]
+    },
+    {
+        "name": "guildMemberUpdate",
+        "value": [
+            "oldMember",
+            "newMember"
+        ]
+    },
+    {
+        "name": "guildMembersChunk",
+        "value": [
+            "members",
+            "guild",
+            "data"
+        ]
+    },
+    {
+        "name": "guildUnavailable",
+        "value": [
+            "guild"
+        ]
+    },
+    {
+        "name": "guildUpdate",
+        "value": [
+            "oldGuild",
+            "newGuild"
+        ]
+    },
+    {
+        "name": "interaction",
+        "value": [
+            "interaction"
+        ]
+    },
+    {
+        "name": "interactionCreate",
+        "value": [
+            "interaction"
+        ]
+    },
+    {
+        "name": "invalidRequestWarning",
+        "value": [
+            "invalidRequestWarningData"
+        ]
+    },
+    {
+        "name": "invalidated",
+        "value": []
+    },
+    {
+        "name": "inviteCreate",
+        "value": [
+            "invite"
+        ]
+    },
+    {
+        "name": "inviteDelete",
+        "value": [
+            "invite"
+        ]
+    },
+    {
+        "name": "message",
+        "value": [
+            "message"
+        ]
+    },
+    {
+        "name": "messageCreate",
+        "value": [
+            "message"
+        ]
+    },
+    {
+        "name": "messageDelete",
+        "value": [
+            "message"
+        ]
+    },
+    {
+        "name": "messageDeleteBulk",
+        "value": [
+            "messages"
+        ]
+    },
+    {
+        "name": "messageReactionAdd",
+        "value": [
+            "message",
+            "user"
+        ]
+    },
+    {
+        "name": "messageReactionRemove",
+        "value": [
+            "message",
+            "user"
+        ]
+    },
+    {
+        "name": "messageReactionRemoveAll",
+        "value": [
+            "message"
+        ]
+    },
+    {
+        "name": "messageReactionRemoveEmoji",
+        "value": [
+            "reaction"
+        ]
+    },
+    {
+        "name": "messageUpdate",
+        "value": [
+            "oldMessage",
+            "newMessage"
+        ]
+    },
+    {
+        "name": "presenceUpdate",
+        "value": [
+            "oldPresence",
+            "newPresence"
+        ]
+    },
+    {
+        "name": "rateLimit",
+        "value": [
+            "rateLimitData"
+        ]
+    },
+    {
+        "name": "ready",
+        "value": [
+            "client"
+        ]
+    },
+    {
+        "name": "roleCreate",
+        "value": [
+            "role"
+        ]
+    },
+    {
+        "name": "roleDelete",
+        "value": [
+            "role"
+        ]
+    },
+    {
+        "name": "roleUpdate",
+        "value": [
+            "oldRole",
+            "newRole"
+        ]
+    },
+    {
+        "name": "shardDisconnect",
+        "value": [
+            "closeEvent",
+            "shardId"
+        ]
+    },
+    {
+        "name": "shardError",
+        "value": [
+            "error",
+            "shardId"
+        ]
+    },
+    {
+        "name": "shardReady",
+        "value": [
+            "shardId",
+            "unavailableGuilds"
+        ]
+    },
+    {
+        "name": "shardReconnecting",
+        "value": [
+            "shardId"
+        ]
+    },
+    {
+        "name": "shardResume",
+        "value": [
+            "shardId",
+            "replayedEvents"
+        ]
+    },
+    {
+        "name": "stageInstanceCreate",
+        "value": [
+            "stageInstance"
+        ]
+    },
+    {
+        "name": "stageInstanceDelete",
+        "value": [
+            "stageInstance"
+        ]
+    },
+    {
+        "name": "stageInstanceUpdate",
+        "value": [
+            "oldStageInstance",
+            "newStageInstance"
+        ]
+    },
+    {
+        "name": "stickerCreate",
+        "value": [
+            "sticker"
+        ]
+    },
+    {
+        "name": "stickerDelete",
+        "value": [
+            "sticker"
+        ]
+    },
+    {
+        "name": "stickerUpdate",
+        "value": [
+            "oldSticker",
+            "newSticker"
+        ]
+    },
+    {
+        "name": "threadCreate",
+        "value": [
+            "thread"
+        ]
+    },
+    {
+        "name": "threadDelete",
+        "value": [
+            "thread"
+        ]
+    },
+    {
+        "name": "threadListSync",
+        "value": [
+            "threads"
+        ]
+    },
+    {
+        "name": "threadMemberUpdate",
+        "value": [
+            "oldMember",
+            "newMember"
+        ]
+    },
+    {
+        "name": "threadMembersUpdate",
+        "value": [
+            "oldMembers",
+            "newMembers"
+        ]
+    },
+    {
+        "name": "threadUpdate",
+        "value": [
+            "oldThread",
+            "newThread"
+        ]
+    },
+    {
+        "name": "typingStart",
+        "value": [
+            "typeing"
+        ]
+    },
+    {
+        "name": "userUpdate",
+        "value": [
+            "oldUser",
+            "newUser"
+        ]
+    },
+    {
+        "name": "voiceStateUpdate",
+        "value": [
+            "oldState",
+            "newState"
+        ]
+    },
+    {
+        "name": "warn",
+        "value": [
+            "message"
+        ]
+    },
+    {
+        "name": "webhookUpdate",
+        "value": [
+            "channel"
+        ]
+    }
+]
