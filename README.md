@@ -1,4 +1,5 @@
-> ## ⚠️ pre-release ⚠️
+>## ⚠️ pre-release ⚠️
+>### Join the discord server to be notified about release updates.
 ___
 <!-- ![badge](https://github.com/aroary/disaccord/actions/workflows/main.yml/badge.svg) -->
 [![GitHub release](https://img.shields.io/github/v/release/aroary/disaccord.svg)](https://GitHub.com/aroary/disaccord/releases/)
