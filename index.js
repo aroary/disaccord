@@ -5,6 +5,9 @@
  * @copyright Ⓒ 2021 aroary
  */
 
+// License
+console.log(`\n${require("fs").readFileSync("./LICENCE.md", { encoding: "ascii" })}\n`); // Not required.
+
 const discord = require("discord.js");
 const Entry = require("./core/utilities/logger");
 
@@ -14,7 +17,7 @@ const secrets = JSON.parse(require("fs").readFileSync("./.secrets.json"));
 // Create out client.
 const client = new discord.Client({ intents: secrets.intents });
 
-// Online.
+// Client data.
 client.secrets = secrets;
 client.online = false;
 
@@ -22,7 +25,9 @@ client.online = false;
 require("./core/utilities/initiate")(client);
 
 // Login.
-client.login(client.secrets.token).then(() => {
-    client.online = true;
-    new Entry("login", `Client logged in succesfully with discord.js v${discord.version}`).setColor("green").log();
-}).catch(error => new Entry("error", error).setColor("red").log());
+client.login(client.secrets.token)
+    .then(() => {
+        client.online = true;
+        new Entry("login", `Client logged in succesfully with discord.js v${discord.version}`).setColor("green").log();
+    })
+    .catch(error => new Entry("error", error).setColor("red").log());
