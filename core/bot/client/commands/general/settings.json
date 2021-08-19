@@ -1,0 +1,6 @@
+{
+    "name": "general",
+    "id": "gen",
+    "description": "General commands to enhance your servers chatting experiance.",
+    "helpMessage": true
+}
