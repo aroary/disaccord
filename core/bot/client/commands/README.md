@@ -8,7 +8,10 @@
     "helpMessage": true
 }
 ```
-___
+* **`name`**: *`String`* The *name* of the category.
+* **`ID`**: *`String`* The *ID* of the category.
+* **`description`**: *`String`* The category *description*.
+* **`helpMessage`**: *`Boolean`* Weather or not to display in the help message.
 # Template for adding commands
 ### Paste the code below into your new command file in the `core\bot\client\commands\CATEGORY` directory.
 ```js
@@ -38,3 +41,14 @@ module.exports = {
     run
 };
 ```
+* **`config`**: *`Object`* The command data.
+    * **`name`**: *`String`* The name of the command.
+    * **`usage`**: *`String`* The usage of the command (without the prefix).
+    * **`description`**: *`String`* The command description.
+    * **`alias`**: *`Array`* An alias which can also run the command.
+    * **`permission`**: *`Array`* The required permission to run the command.
+    * **`direct`**: *`Boolean`* Weather or not to allow the command to run in a direct channel.
+    * **`server`**: *`Boolean`* Weather or not to allow the command to run in a guild channel.
+    * **`available`**: *`Boolean`* Weather or not to allow everyone to use the command.
+    * **`log`**: *`Boolean`* Weather or not to log the commands usage.
+* **`run`**: *`Function`* The function to run on the command. 
