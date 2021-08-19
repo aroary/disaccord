@@ -1,4 +1,5 @@
-> ## ⚠️ pre-release ⚠️
+>## ⚠️ pre-release ⚠️
+>### Join the discord server to be notified about release updates.
 ___
 <!-- ![badge](https://github.com/aroary/disaccord/actions/workflows/main.yml/badge.svg) -->
 [![GitHub release](https://img.shields.io/github/v/release/aroary/disaccord.svg)](https://GitHub.com/aroary/disaccord/releases/)
@@ -11,11 +12,12 @@ ___
 {
     "token": "TOKEN",
     "intents": ["INTENT"],
-    "port": 443,
+    "port": 3000,
     "redeploy": true,
-    "prefix": "PREFIX",
+    "prefix": "",
     "developer": ["DEVELOPER_ID"],
-    "statusInterval": 60000,
+    "supportServer":"SUPPORT_SERVER_ID",
+    "statusInterval": 350000,
     "version": "3.0.1"
 }
 ```
@@ -25,6 +27,7 @@ ___
 * **`reDeploy`**: *`Boolean`* Weather or not to reregister the slash commands.
 * **`prefix`**: *`String`* The *prefix* used to execute commands.
 * **`developer`**: *`Array`* The *developers* of the bot.
+* **`supportServer`**: *`String`* The *ID* of the support server.
 * **`statusInterval`**: *`Number`* The *interval* to cycle to the next value in the *status* array.
 * **`version`**: *`String`* Ther version of your the bot.
 ## Requirements

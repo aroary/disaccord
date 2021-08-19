@@ -43,7 +43,7 @@ module.exports = {
     * **`permission`**: *`Array`* The permissions required to run this slash command.
 * **`data`**: *`Object`* Data to register with discord.
     * **`name`**: *`String`* The name of the slash command.
-    * **`description`**: *``* The description of the slash command.
+    * **`description`**: *`String`* The description of the slash command.
     * **`options`**: *`Array`* **Optional** Options that the user may fill in for the command arguments.
         * **`name`**: *`String`* The name of the option.
         * **`type`**: *`String`* The type of option (`parameters\dataOptionType.json`).

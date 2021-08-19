@@ -1,0 +1,6 @@
+{
+    "name": "utility",
+    "id": "utl",
+    "description": "Utility to manage your servers settings and bot settings.",
+    "helpMessage": true
+}
