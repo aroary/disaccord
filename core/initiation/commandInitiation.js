@@ -39,7 +39,7 @@ function initiateCommands(client) {
                 // Set category details.
                 categoryConfiguration.type = "command category"
                 client.categories.set(categoryConfiguration.name.toLowerCase(), categoryConfiguration);
-                client.categorieID.set(categoryConfiguration.id.toLowerCase(), categoryConfiguration.name.toLowerCase());
+                client.categorieID.set(categoryConfiguration.id.toUpperCase(), categoryConfiguration.name.toLowerCase());
 
                 // Filter for only command files.
                 const commands = files.filter(fileName => fileName.split`.`.pop() === 'js');

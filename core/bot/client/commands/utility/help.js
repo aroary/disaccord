@@ -7,31 +7,67 @@ const discord = require("discord.js");
  * @param {Array} args - The args.
  */
 function run(client, message, args) {
-    var helpEmbed = new discord.MessageEmbed().setTimestamp();
+    args[0] ? args[0] = args[0].toLowerCase() : undefined;
 
-    var help = args[0].toLowerCase();
-    help = client.commands.get(help) || client.commands.get(client.aliases.get(help)) || client.categorieID.get(help) || client.categorieID.get(client.categories.get(help));
+    const categoryIDs = client.categorieID;
+    const aliases = client.aliases;
+    const categories = client.categories;
+    const commands = client.commands;
+    const triggers = client.triggers;
 
-    if (help.type = "command category") {
-        // REASEARCH 'toJSON' FUNCTION RETURN VALUES
-        const commands = client.commands.filter(command => command.type === help.name || command.type === help.id).map(command => command = `**\`${command.config.name}\`**: ${command.config.description}`).toJSON().join`\n`;
-        helpEmbed.setTitle(`${help.name} commands`).setDescription(commands);
-        return message.reply(helpEmbed);
-    } else if (help.type = "command") {
-        if (!help.config.available) return;
-        helpEmbed
-            .setTitle(help.config.name)
-            .addFields(
-                { name: "Description:", value: help.config.usage, inline: false },
-                { name: "Usage:", value: help.config.usage, inline: false },
-                { name: "aliases:", value: help.config.alias.join`, ` || "None", inline: true },
-                { name: "Permissions:", value: help.config.permission.join`, ` || "None", inline: true }
-            )
-        return message.reply(helpEmbed);
+    if (args[0]) {
+        const category = categories.get(args[0]) || categories.get(categoryIDs.get(args[0].toUpperCase()));
+        const command = commands.get(args[0]) || commands.get(aliases.get(args[0]));
+        const trigger = false;//triggers.get(args[0]);
+        if (category && category.helpMessage) {
+            const cmds = commands.filter(cmd => cmd.category === category.id.toUpperCase() && cmd.config.help).map(cmd => cmd = `**\`${cmd.config.name}\`**: ${cmd.config.description}`).join`\n`;
+            const help = new discord.MessageEmbed()
+                .setTitle(category.name)
+                .setDescription(cmds)
+                .setTimestamp();
+            // worx
+            message.channel.send({ embeds: [help] });
+        } else if (command && command.config.help) {
+            const help = new discord.MessageEmbed()
+                .setTitle(command.config.name)
+                .setDescription(command.config.description)
+                .addFields(
+                    { name: "Usage:", value: command.config.usage },
+                    { name: "Aliases:", value: command.config.alias.length ? command.config.alias.join(", ") : "None." },
+                    { name: "Permissions:", value: command.config.permission.length ? command.config.permission.join(", ") : "None." }
+                )
+
+            message.channel.send({ embeds: [help] });
+        } else if (trigger) {
+            // Coming soon!
+        } else {
+            const notFound = new discord.MessageEmbed()
+                .setAuthor(message.author.tag, message.author.avatarURL())
+                .setTitle("Oops!")
+                .setDescription("No interaction, command, trigger, or category found.")
+                .setColor("RED")
+                .setTimestamp();
+
+            message.channel.send({ embeds: [notFound] });
+        };
     } else {
-        if (client.categorieID.size) client.categorieID.forEach(category => helpEmbed.addField(category.name, category.description, true));
-        return message.reply(helpEmbed);
+        var embed = new discord.MessageEmbed()
+            .setTitle("Help")
+
+        categories.forEach(category => {
+            embed.addField(category.name, category.description, true);
+        });
+
+        embed.addField("triggers", "The triggers", true)
+            .setFooter(`${client.secrets.prefix}help (interaction | category | alias)`)
+            .setTimestamp();
+
+        message.channel.send({ embeds: [embed] });
     };
+
+    // commands.forEach((value, key) => {
+
+    // })
 };
 
 module.exports = {
@@ -44,6 +80,7 @@ module.exports = {
         direct: false,
         server: true,
         available: true,
+        help: true,
         log: true
     },
     run
