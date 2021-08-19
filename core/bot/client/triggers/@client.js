@@ -35,6 +35,7 @@ module.exports = {
         permissions: ["SEND_MESSAGES"],
         direct: false,
         server: true,
+        help: true,
         available: true,
         log: true
     },
