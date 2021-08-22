@@ -28,9 +28,9 @@ function initiateButtons(client) {
         buttonFiles.forEach(file => {
             // Set the collection values.
             const button = require(`../bot/client/buttons/${file}`);
-            client.buttons.set(button.name, button.run);
+            client.buttons.set(button.configuration.name, button);
 
-            new Entry("load", `Button ${button.name}`).setColor("white", "black").log();
+            new Entry("load", `Button ${button.configuration.name}`).setColor("white", "black").log();
         });
     });
 };

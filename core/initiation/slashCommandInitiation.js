@@ -28,7 +28,7 @@ function initiateSlashCommands(client) {
         slashFiles.forEach(file => {
             // Get and create slash command.
             const slashCommand = require(`../bot/client/slashCommands/${file}`);
-            client.slashCommands.set(slashCommand.data.name, slashCommand.run);
+            client.slashCommands.set(slashCommand.data.name, slashCommand);
 
             new Entry("load", `Slash command ${slashCommand.data.name}`).setColor("white", "black").log();
         });
