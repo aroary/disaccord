@@ -9,16 +9,12 @@ const discord = require("discord.js");
 function run(client, message, args) {
     args[0] ? args[0] = args[0].toLowerCase() : undefined;
 
-    const categoryIDs = client.categorieID;
-    const aliases = client.aliases;
-    const categories = client.categories;
-    const commands = client.commands;
-    const triggers = client.triggers;
+    const categoryIDs = client.categorieID, aliases = client.aliases, categories = client.categories, commands = client.commands, triggers = client.triggers;
 
     if (args[0]) {
-        const category = categories.get(args[0]) || categories.get(categoryIDs.get(args[0].toUpperCase()));
-        const command = commands.get(args[0]) || commands.get(aliases.get(args[0]));
-        const trigger = triggers.filter(t => t.config.name.toLowerCase() === args[0])[0];
+        const category = categories.get(args[0]) || categories.get(categoryIDs.get(args[0].toUpperCase())),
+            command = commands.get(args[0]) || commands.get(aliases.get(args[0])),
+            trigger = triggers.filter(t => t.config.name.toLowerCase() === args[0])[0];
         if (category && category.helpMessage) {
             const cmds = commands.filter(cmd => cmd.category === category.id.toUpperCase() && cmd.config.help).map(cmd => cmd = `**\`${cmd.config.name}\`**: ${cmd.config.description}`).join`\n`;
             const help = new discord.MessageEmbed()
@@ -34,8 +30,8 @@ function run(client, message, args) {
                 .setDescription(command.config.description)
                 .addFields(
                     { name: "Usage:", value: command.config.usage },
-                    { name: "Aliases:", value: command.config.alias.length ? command.config.alias.join(", ") : "None." },
-                    { name: "Permissions:", value: command.config.permission.length ? command.config.permission.join(", ") : "None." }
+                    { name: "Aliases:", value: command.config.alias.length ? command.config.alias.join`, `.toLowerCase() : "None." },
+                    { name: "Permissions:", value: command.config.permission.length ? command.config.permission.join`, `.replace("_", " ").toLowerCase() : "None." }
                 )
                 .setTimestamp();
 
@@ -54,7 +50,7 @@ function run(client, message, args) {
                     .setTitle(trigger.config.name)
                     .setDescription(trigger.config.description)
                     .addFields(
-                        { name: "Permissions:", value: trigger.config.permissions.length ? trigger.config.permissions.join(", ") : "None." }
+                        { name: "Permissions:", value: trigger.config.permissions.length ? trigger.config.permissions.join`, `.replace("_", " ").toLowerCase() : "None." }
                     )
                     .setTimestamp();
                 message.channel.send({ embeds: [t] });
