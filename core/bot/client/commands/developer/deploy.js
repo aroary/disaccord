@@ -63,9 +63,9 @@ function run(client, message, args) {
 
 module.exports = {
     config: {
-        name: "NAME",
-        usage: "USAGE",
-        description: "DESCRIPTION",
+        name: "deploy",
+        usage: "deploy",
+        description: "Deploy slash commands",
         alias: [],
         permission: ["SEND_MESSAGES"],
         direct: false,
