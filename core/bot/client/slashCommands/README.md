@@ -15,7 +15,8 @@ function run(client, interaction) {
 module.exports = {
     configuration: {
         log: true,
-        permission: ["SEND_MESSAGES"]
+        permission: ["SEND_MESSAGES"],
+        deploy: true
     },
     data: {
         name: "NAME",
@@ -41,6 +42,7 @@ module.exports = {
 * **`configureation`**: *`Object`* Settings for the slash command.
     * **`log`**: *`Boolean`* Weather or not to log the slash command usage.
     * **`permission`**: *`Array`* The permissions required to run this slash command.
+    * **`deploy`**: *`Boolean`* Weather or not to redeploy the slash command data.
 * **`data`**: *`Object`* Data to register with discord.
     * **`name`**: *`String`* The name of the slash command.
     * **`description`**: *`String`* The description of the slash command.

@@ -1,0 +1,6 @@
+{
+    "name": "developer",
+    "id": "dev",
+    "description": "Commands exclusively for the developers.",
+    "helpMessage": false
+}

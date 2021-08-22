@@ -15,7 +15,7 @@ function conditions(client, message) {
  * @param {discord.Client} client - The client.
  * @param {discord.Message} message - The message.
  */
-function run(client, message, argsient) {
+function run(client, message) {
     const botEmbed = new discord.MessageEmbed()
         .setTitle(client.user.username)
         .setDescription(client.secrets.description)

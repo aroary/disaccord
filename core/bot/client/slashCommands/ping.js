@@ -15,7 +15,8 @@ function run(client, interaction) {
 module.exports = {
     configuration: {
         log: true,
-        permission: ["SEND_MESSAGES"]
+        permission: ["SEND_MESSAGES"],
+        deploy: true
     },
     data: {
         name: "ping",
