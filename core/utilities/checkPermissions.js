@@ -6,7 +6,7 @@
  */
 
 const discord = require("discord.js");
-const perms = require("../../documentation/permissions.json");
+const perms = require("../../documents/permissions.json");
 const Entry = require("./logger");
 
 /**
