@@ -1,6 +1,6 @@
 const discord = require("discord.js");
 
-const oldData = {};
+const oldData = { user: {} };
 
 /**
  * @param {discord.Client} client - The client.
