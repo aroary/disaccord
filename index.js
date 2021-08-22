@@ -20,6 +20,7 @@ const client = new discord.Client({ intents: secrets.intents });
 // Client data.
 client.secrets = secrets;
 client.online = false;
+client.deployed = false;
 
 // Initiate our bot.
 require("./core/utilities/initiate")(client);

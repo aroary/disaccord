@@ -10,7 +10,6 @@ const chalk = require("chalk");
 
 /**
  * @description Create an entry to log to the console.
- * @example new Entry({name: "NAME", value: "VALUE"}).setColor({background: "white", foreGround: "black"}).log();
  * @requires chalk
  */
 class Entry {
@@ -45,6 +44,7 @@ class Entry {
     /**
      * @description Set the color options.
      * @param {Object} options - The color options.
+     * @example ("red", "black")
      */
     setColor(backGround = "black", foreGround = "white"){
         this.color = chalk.bgKeyword(backGround).keyword(foreGround);
@@ -53,11 +53,13 @@ class Entry {
 
     /**
      * @description Log the entry to the console.
-     * @returns The logged entry.
+     * @param {Boolean} consoleLog - Weather or not to log the entry to the console.
+     * @returns The entry string.
+     * @default true Logs the entry to the console.
      */
-    log(){
+    log(consoleLog = true){
         const data = `[${moment().format('YYYY-MM-DD HH:mm:ss')}] ${this.color(` ${this.name.length < 10 ? this.name + " ".repeat(10 - this.name.length) : this.name} `)} ${this.value}`;
-        console.log(data);
+        if(consoleLog) console.log(data);
         return data;
     };
 

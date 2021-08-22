@@ -36,7 +36,9 @@ module.exports = {
         permission: ["SEND_MESSAGES"],
         direct: false,
         server: true,
-        available: true
+        help: true,
+        available: true,
+        log: true
     },
     run
 };
@@ -49,6 +51,7 @@ module.exports = {
     * **`permission`**: *`Array`* The required permission to run the command.
     * **`direct`**: *`Boolean`* Weather or not to allow the command to run in a direct channel.
     * **`server`**: *`Boolean`* Weather or not to allow the command to run in a guild channel.
-    * **`available`**: *`Boolean`* Weather or not to allow everyone to use the command.
+    * **`help`**: *`Boolean`* Weather or not to display in the help command.
+    * **`available`**: *`Boolean`* Weather or not to allow everyone to use the command (develepers always have access).
     * **`log`**: *`Boolean`* Weather or not to log the commands usage.
 * **`run`**: *`Function`* The function to run on the command. 

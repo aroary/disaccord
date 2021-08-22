@@ -7,6 +7,7 @@
 
 const discord = require("discord.js");
 const perms = require("../../documentation/permissions.json");
+const Entry = require("./logger");
 
 /**
  * @description Checks for permissions for client and user.
@@ -15,7 +16,7 @@ const perms = require("../../documentation/permissions.json");
  * @param {discord.GuildMember} member - Member to check.
  * @param {Array} permission - Array of permissions.
  * @returns {Object} Returns false if client and member have all requred permissions.
- * @example checkPermissions(channel, guild.me, member, [])
+ * @example (channel, guild.me, member, [])
  */
 module.exports = (channel, client = null, member = null, permission) => {
     const missing = {};
@@ -23,7 +24,7 @@ module.exports = (channel, client = null, member = null, permission) => {
     if (member) missing.user = [];
 
     permission.forEach(perm => {
-        if (!perms.includes(perm)) throw new Error('Invalid Permission in permission array.');
+        if (!perms.includes(perm)) new Entry("warning", `${perm} is not a discord permission`).setColor("yellow", "black").log();
 
         // Check for permissions for both client and member.
         if (missing.client && !client.permissionsIn(channel.id).has(perm, true)) missing.client.push(perm);

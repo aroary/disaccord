@@ -27,7 +27,7 @@ module.exports = {
         name: "NAME",
         description: "DESCRIPTION",
         permissions: ["SEND_MESSAGES"],
-        direct: true,
+        direct: false,
         server: true,
         help: true,
         available: true,
