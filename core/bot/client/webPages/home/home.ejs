@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%= user.username %> | Home</title>
+        <!-- Style links -->
+        <link rel="stylesheet" type="text/css" href="./home.css">
+        <link rel="shortcut icon" href="<%= user.avatarURL %>" type="image/x-icon">
+        <!-- Script links -->
+        <script src="./home.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Disaccord</h1>
+        </header>
+        <main>
+            <h1><%= user.username %></h1>
+            <ul>
+                <li>Users: <%= userCount %></li>
+                <li>Servers: <%= guildCount %></li>
+            </ul>
+        </main>
+    </body>
+</html>
