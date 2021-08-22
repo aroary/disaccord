@@ -18,8 +18,8 @@ function run(client, interaction) {
     if (interaction.isCommand()) {
         const command = client.slashCommands.get(interaction.commandName);
         if (command) {
-            command(client, interaction);
-            new Entry("slash", interaction.commandName).setColor("purple").log();
+            command.run(client, interaction);
+            if (command.configuration.log) new Entry("slash", interaction.commandName).setColor("purple").log();
         };
     };
 
@@ -27,8 +27,8 @@ function run(client, interaction) {
     if (interaction.isButton()) {
         const button = client.buttons.get(interaction.customId);
         if (button) {
-            button(client, interaction);
-            new Entry("button", interaction.customId).setColor("purple").log();
+            button.run(client, interaction);
+            if(button.configuration.log) new Entry("button", interaction.customId).setColor("purple").log();
         };
     };
 
