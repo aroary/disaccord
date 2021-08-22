@@ -9,7 +9,7 @@ const discord = require("discord.js");
  * @param {discord.Message} message - The message
  */
 function conditions(client, message, args) {
-    if (/*CONDITION ===*/ true) return true;
+    if (/*CONDITION ==*/ true) return true;
     else return false;
 };
 
