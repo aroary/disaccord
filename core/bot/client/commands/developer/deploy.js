@@ -20,7 +20,17 @@ function run(client, message, args) {
                 const slashCommand = require(`../../slashCommands/${file}`);
 
                 // Register the slash command data.
-                if (slashCommand.data.name === args[0].toLowerCase()) client.application?.commands.create(slashCommand.data);
+                if (slashCommand.data.name === args[0].toLowerCase()) {
+                    client.application?.commands.create(slashCommand.data);
+                    new Entry("deploy", `Deployed ${slashCommand.data.name}`).setColor("cyan", "black").log();
+
+                    const deployEmbed = new discord.MessageEmbed()
+                        .setTitle("Deployment")
+                        .setDescription(`Deployed ${slashCommand.data.name}`)
+                        .setTimestamp();
+
+                    message.channel.send({ embeds: [deployEmbed] });
+                };
             });
         });
     } else {
@@ -50,6 +60,7 @@ function run(client, message, args) {
                     if (slashCommand.configuration.deploy) {
                         client.application?.commands.create(slashCommand.data);
                         files += `, ${slashCommand.data.name}`;
+                        new Entry("deploy", `Deployed ${slashCommand.data.name}`).setColor("cyan", "black").log();
                     };
                 });
 
