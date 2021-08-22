@@ -1,0 +1,11 @@
+[
+    "STRING",
+    "INTEGER",
+    "NUMBER",
+    "BOOLEAN",
+    "USER",
+    "MEMBER",
+    "CHANNEL",
+    "ROLE",
+    "MENTIONABLE"
+]
