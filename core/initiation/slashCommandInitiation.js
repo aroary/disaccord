@@ -24,7 +24,7 @@ function initiateSlashCommands(client) {
 
         // Loop through the files.
         const slashFiles = files.filter(file => file.split(".").pop() === "js");
-        new Entry("load", `Found ${slashFiles.length} slash command files.`).setColor("grey").log();
+        new Entry("load", `Found ${slashFiles.length} slash Command files.`).setColor("grey").log();
         slashFiles.forEach(file => {
             // Get and create slash command.
             const slashCommand = require(`../bot/client/slashCommands/${file}`);
