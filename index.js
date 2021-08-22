@@ -5,9 +5,6 @@
  * @copyright Ⓒ 2021 aroary
  */
 
-// License
-console.log(`\n${require("fs").readFileSync("./LICENCE.md", { encoding: "ascii" })}\n`); // Not required.
-
 const discord = require("discord.js");
 const Entry = require("./core/utilities/logger");
 
