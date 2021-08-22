@@ -1,13 +1,6 @@
 const discord = require("discord.js");
 
-const oldData = {
-    userCount: 0,
-    guildCount: 0,
-    user: {
-        username: "",
-        avatarURL: ""
-    }
-};
+const oldData = {};
 
 /**
  * @param {discord.Client} client - The client.
@@ -16,6 +9,7 @@ const oldData = {
 function data(client) {
     oldData.userCount = client.users.cache.size;
     oldData.guildCount = client.guilds.cache.size;
+    oldData.repository = client.secrets.repository;
     return oldData;
 };
 
