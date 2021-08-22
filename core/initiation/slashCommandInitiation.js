@@ -30,7 +30,7 @@ function initiateSlashCommands(client) {
             const slashCommand = require(`../bot/client/slashCommands/${file}`);
             client.slashCommands.set(slashCommand.data.name, slashCommand);
 
-            new Entry("load", `Slash command ${slashCommand.data.name}`).setColor("white", "black").log();
+            new Entry("load", `Slash Command ${slashCommand.data.name}`).setColor("white", "black").log();
         });
     });
 };
