@@ -26,9 +26,9 @@
             <br><br><br><br><br>
         </main>
         <footer>
-            <h6><a href="http://github.com/<%= repository %>" target="_blank" rel="noopener noreferrer"><%= repository %></a></h6>
-            <h5>aroary</h5>
-            <h5>Invite our bot</h5>
+            <h6><a href="http://github.com/<%= repository %>" target="_blank" rel="noopener noreferrer"><%= repository.split`/`.pop() %></a></h6>
+            <h6><a href="http://github.com/<%= repository.split`/`.shift() %>" target="_blank" rel="noopener noreferrer"><%= repository.split`/`.shift() %></a></h6>
+            <h6><a href="https://discord.com/api/oauth2/authorize?client_id=<%= user.id %>&permissions=8&scope=bot%20applications.commands" target="_blank" rel="noopener noreferrer">Invite</a></h6>
         </footer>
         <!-- Scripts -->
         <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
