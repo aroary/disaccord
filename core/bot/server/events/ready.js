@@ -30,6 +30,7 @@ function run(client) {
     const data = require("../../../data/publicData").oldData;
     data.user.avatarURL = client.user.avatarURL();
     data.user.username = client.user.username;
+    data.user.id = client.user.id;
 };
 
 module.exports = { name: "ready", run };
