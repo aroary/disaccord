@@ -29,3 +29,5 @@ module.exports = {
     * **`path`**: *`Array`* The URL path for the webpage.
     * **`static`**: *`String`* The files used in the webpage.
 * **`send`**: *`Function`* The function to send text/html to the client.
+## Adding data to send to the client.
+#### To add a variable to send to the client if the variable requires the bot to log in before it exists you can set it in the ready event (`core\bot\server\events\ready.js`). Otherwise you can set the variables name and value in the public data file (`core\data\publicData.js`).
