@@ -41,3 +41,13 @@ ___
 ### Template by [aroary](https://github.com/aroary)
 [![Profile views](https://gpvc.arturio.dev/aroary)](https://github.com/aroary)
 ###### MIT License | Copyright Ⓒ 2021 aroary
+___
+## Other documentation pages
+* [disaccord](https://github.com/aroary/disaccord#readme)
+* [initiation](https://github.com/aroary/disaccord/blob/master/core/initiation/README.md)
+* [events](https://github.com/aroary/disaccord/blob/master/core/bot/server/events/README.md)
+* [triggers](https://github.com/aroary/disaccord/blob/master/core/bot/client/triggers/README.md)
+* [slashCommands](https://github.com/aroary/disaccord/tree/master/core/bot/client/slashCommands#readme)
+* [selectMenus](https://github.com/aroary/disaccord/blob/master/core/bot/client/selectMenus/README.md)
+* [commands](https://github.com/aroary/disaccord/blob/master/core/bot/client/commands/README.md)
+* [buttons](https://github.com/aroary/disaccord/tree/master/core/bot/client/buttons#readme)
