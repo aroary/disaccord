@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <!-- Meta tags -->
+        <!-- <meta name="description" content="%= description %>"/> -->
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1"/>
         <title><%= user.username %> | Home</title>
         <!-- Style links -->
         <link rel="stylesheet" type="text/css" href="./home.css">
@@ -10,14 +14,23 @@
     </head>
     <body>
         <header>
-            <h1>Disaccord</h1>
+            <h2>Home</h2>
+            <h2>Commands</h2>
         </header>
         <main>
-            <h1><%= user.username %></h1>
-            <ul>
-                <li>Users: <%= userCount %></li>
-                <li>Servers: <%= guildCount %></li>
-            </ul>
+            <br><br><br><br><br>
+            <h3>Repository</h3>
+            <div class="github-card" data-github="<%= repository %>" data-width="100%" data-height="0" data-theme="medium"></div>
+            <h3>Server</h3>
+            <iframe src="https://discord.com/widget?id=<%= supportServer %>&theme=dark" width="100%" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+            <br><br><br><br><br>
         </main>
+        <footer>
+            <h6><a href="http://github.com/<%= repository %>" target="_blank" rel="noopener noreferrer"><%= repository %></a></h6>
+            <h5>aroary</h5>
+            <h5>Invite our bot</h5>
+        </footer>
+        <!-- Scripts -->
+        <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
     </body>
 </html>
