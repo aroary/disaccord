@@ -24,3 +24,8 @@ module.exports = {
     send
 };
 ```
+* **`PAGE_DESCRIPTION`** → Replace with a description of the page.
+* **`configuration`**: *`Object`* The settings for the page.
+    * **`path`**: *`Array`* The URL path for the webpage.
+    * **`static`**: *`String`* The files used in the webpage.
+* **`send`**: *`Function`* The function to send text/html to the client.

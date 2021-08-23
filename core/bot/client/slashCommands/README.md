@@ -39,6 +39,7 @@ module.exports = {
     run
 };
 ```
+* **`FUNCTION_DESCRIPTION`** → Replace with a description of the function.
 * **`configureation`**: *`Object`* Settings for the slash command.
     * **`log`**: *`Boolean`* Weather or not to log the slash command usage.
     * **`permission`**: *`Array`* The permissions required to run this slash command.
@@ -55,5 +56,3 @@ module.exports = {
             * **`name`**: *`String`* The name of the choice.
             * **`value`**: *`String`* The value of the choice.
 * **`run`**: *`Function`* The function to run when a user executes the slash command.
-
-<!-- → -->
