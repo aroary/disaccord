@@ -34,7 +34,11 @@ function run(client, interaction) {
 
     // Handle select menues
     if (interaction.isSelectMenu()) {
-        new Entry("menu", interaction.commandName).setColor("purple").log();
+        const menu = client.menus.get(interaction.customId);
+        if (menu) {
+            menu.run(client, interaction);
+            if(menu.configuration.log) new Entry("menu", interaction.customId).setColor("purple").log();
+        };
     };
 
     // Handle message components.
