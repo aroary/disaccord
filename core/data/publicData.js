@@ -11,6 +11,7 @@ function data(client) {
     oldData.guildCount = client.guilds.cache.size;
     oldData.repository = client.secrets.repository;
     oldData.supportServer = client.secrets.supportServer;
+    oldData.description = client.secrets.description
     return oldData;
 };
 
