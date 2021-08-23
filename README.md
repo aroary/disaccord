@@ -1,7 +1,6 @@
 >## ⚠️ pre-release ⚠️
 >### Join the discord server to be notified about release updates.
 ___
-<!-- ![badge](https://github.com/aroary/disaccord/actions/workflows/main.yml/badge.svg) -->
 [![GitHub release](https://img.shields.io/github/v/release/aroary/disaccord.svg)](https://GitHub.com/aroary/disaccord/releases/)
 [![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/aroary/disaccord)
 [![Discord](https://img.shields.io/discord/854114095929491456.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/BHtNSq5bq2)
