@@ -14,7 +14,7 @@ function run(client, interaction) {
 };
 
 module.exports = {
-    configuration:{
+    configuration: {
         name: "NAME",
         log: true
     },
