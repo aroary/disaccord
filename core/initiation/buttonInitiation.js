@@ -20,7 +20,7 @@ function initiateButtons(client) {
     // Read the directory.
     fs.readdir('core/bot/client/buttons', (error, files) => {
         // Terminate loading process if there is an error.
-        if (error) return new Entry().setName("error").setValue(error).setColor({ backGround: "red" }).log();
+        if (error) return new Entry().setName("error").setValue(error).setColor("red").log();
         
         // Loop through relevant files.
         const buttonFiles = files.filter(file => file.split('.').pop() === 'js');
