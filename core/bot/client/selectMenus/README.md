@@ -5,7 +5,7 @@ const discord = require("discord.js");
 const Entry = require("../../../utilities/logger");
 
 /**
- * @description D
+ * @description DESCRIPTION
  * @param {discord.Client} client - The client.
  * @param {discord.Interaction} interaction - The interaction.
  */
@@ -15,7 +15,7 @@ function run(client, interaction) {
 
 module.exports = {
     configuration: {
-        name: "greet",
+        name: "NAME",
         log: true
     },
     run
