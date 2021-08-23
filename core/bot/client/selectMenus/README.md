@@ -5,7 +5,7 @@ const discord = require("discord.js");
 const Entry = require("../../../utilities/logger");
 
 /**
- * @description DESCRIPTION
+ * @description FUNCTION_DESCRIPTION
  * @param {discord.Client} client - The client.
  * @param {discord.Interaction} interaction - The interaction.
  */
@@ -21,3 +21,8 @@ module.exports = {
     run
 };
 ```
+* **`FUNCTION_DESCRIPTION`** → Replace with a description of the run function.
+* **`configuration`**: *`Object`* The select menu settings.
+    * **`NAME`** → Replace with the name of the button.
+    * **`log`**: *`Boolean`* Weather or not to log the select menu usage.
+* **`run`**: *`Function`* The Function to run when the slect menu is used.
