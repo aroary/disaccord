@@ -27,7 +27,7 @@ app.set('view engine', 'html');
 function initiateWebsite(client) {
     // Set main page.
     app.use(express.static(path.join(__dirname, "../bot/client/webPages/home")));
-    app.get("/", (req, res) => res.status(200).set('Content-Type', 'text/html').render(path.join(__dirname, "../bot/client/webPages/home/home.ejs"), data(client)));
+    app.get(["/", "home"], (req, res) => res.status(200).set('Content-Type', 'text/html').render(path.join(__dirname, "../bot/client/webPages/home/home.ejs"), data(client)));
 
     // Load all the rest of the webfiles.
     const files = fs.readdirSync("core/bot/server/webapp", { encoding: "utf-8" }).filter(file => file.split`.`.pop() === "js");
