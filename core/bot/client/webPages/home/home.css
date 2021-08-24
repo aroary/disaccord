@@ -5,3 +5,4 @@ main { background-color: #5865F2; margin-left: 30%; margin-right: 30%; padding-t
 footer:last-of-type { background-color: #23272A; word-spacing: 80px; position: fixed; bottom: 0; left: 0; right: 0; padding: 20px;}
 footer * { display: inline; }
 a { color: white; }
+header a { text-decoration: none; }

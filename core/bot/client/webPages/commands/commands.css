@@ -5,6 +5,7 @@ main { background-color: #5865F2; text-align: center; margin-left: 15%; margin-r
 footer:last-of-type { background-color: #23272A; word-spacing: 80px; position: fixed; bottom: 0; left: 0; right: 0; padding: 20px; }
 footer * { display: inline; }
 a { color: white; }
+header a { text-decoration: none; }
 td { text-align: center; }
 #commands { border: 2px solid #23272A; border-radius: 20px; width: 100%; padding: 20px;}
 #commands td { border: 2px solid #23272A; border-radius: 20px; padding: 5px; }
