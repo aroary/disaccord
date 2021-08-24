@@ -9,13 +9,11 @@
         <!-- Style links -->
         <link rel="stylesheet" type="text/css" href="./home.css">
         <link rel="shortcut icon" href="<%= user.avatarURL %>" type="image/x-icon">
-        <!-- Script links -->
-        <script src="./home.js"></script>
     </head>
     <body>
         <header>
-            <h2>Home</h2>
-            <h2>Commands</h2>
+            <h2><a id="homeURL">Home</a></h2>
+            <h2><a id="commandsURL">Commands</a></h2>
         </header>
         <main>
             <h3>Repository</h3>
@@ -30,5 +28,6 @@
         </footer>
         <!-- Scripts -->
         <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+        <script src="./home.js"></script>
     </body>
 </html>

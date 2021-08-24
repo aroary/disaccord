@@ -36,13 +36,13 @@ function initiateWebsite(client) {
         const page = require(`../bot/server/webapp/${file}`);
 
         // Set the page.
-        app.use(express.static(path.join(__dirname, `../../${page.configuration.static}`)));
+        if (page.configuration.static) app.use(express.static(path.join(__dirname, `../../${page.configuration.static}`)));
         app.get(page.configuration.path, (req, res) => page.send(client, req, res));
         new Entry("load", `Webapp ${page.configuration.path}`).setColor("white", "black").log();
     });
 
     // Set default page.
-    app.get("*", (req, res) => res.status(301).redirect(`${req.protocol}://${req.get('host')}/`));
+    app.get("*", (req, res) => res.status(307).redirect(`${req.protocol}://${req.get('host')}/`));
 
     // Listen at specified port.
     app.listen(client.secrets.port, () => new Entry("webapp", `Listening at http://localhost:${client.secrets.port}/`).setColor("brown").log());
