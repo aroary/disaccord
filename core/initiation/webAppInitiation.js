@@ -42,7 +42,7 @@ function initiateWebsite(client) {
     });
 
     // Set default page.
-    app.get("*", (req, res) => res.status(301).redirect(`${req.protocol}://${req.get('host')}/`));
+    app.get("*", (req, res) => res.status(307).redirect(`${req.protocol}://${req.get('host')}/`));
 
     // Listen at specified port.
     app.listen(client.secrets.port, () => new Entry("webapp", `Listening at http://localhost:${client.secrets.port}/`).setColor("brown").log());
