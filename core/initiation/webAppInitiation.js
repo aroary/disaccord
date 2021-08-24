@@ -36,7 +36,7 @@ function initiateWebsite(client) {
         const page = require(`../bot/server/webapp/${file}`);
 
         // Set the page.
-        app.use(express.static(path.join(__dirname, `../../${page.configuration.static}`)));
+        if (page.configuration.static) app.use(express.static(path.join(__dirname, `../../${page.configuration.static}`)));
         app.get(page.configuration.path, (req, res) => page.send(client, req, res));
         new Entry("load", `Webapp ${page.configuration.path}`).setColor("white", "black").log();
     });
