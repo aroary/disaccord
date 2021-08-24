@@ -4,17 +4,16 @@
  * @license MIT
  * @copyright Ⓒ 2021 aroary
  */
-
+const express = require('express'), app = express();
+const http = require('http'), server = http.createServer(app);
+const socket = require("socket.io"), io = new socket.Server(server);
 const discord = require("discord.js");
-const socket = require("socket.io");
 const ejs = require("ejs");
 const path = require("path");
-const express = require("express");
 const fs = require("fs");
 const Entry = require("../utilities/logger");
 const data = require("../data/publicData").data;
 
-const app = express();
 app.set('views', path.join(__dirname, '../bot/client/webPages/'));
 app.engine('html', ejs.renderFile);
 app.set('view engine', 'html');
@@ -27,7 +26,10 @@ app.set('view engine', 'html');
 function initiateWebsite(client) {
     // Set main page.
     app.use(express.static(path.join(__dirname, "../bot/client/webPages/home")));
-    app.get(["/", "home"], (req, res) => res.status(200).set('Content-Type', 'text/html').render(path.join(__dirname, "../bot/client/webPages/home/home.ejs"), data(client)));
+    app.get(["/", "home"], (req, res) => {
+        res.status(200).set('Content-Type', 'text/html').render(path.join(__dirname, "../bot/client/webPages/home/home.ejs"), data(client));
+        new Entry("webapp", req.url).setColor("brown").log();
+    });
 
     // Load all the rest of the webfiles.
     const files = fs.readdirSync("core/bot/server/webapp", { encoding: "utf-8" }).filter(file => file.split`.`.pop() === "js");
@@ -37,7 +39,7 @@ function initiateWebsite(client) {
 
         // Set the page.
         if (page.configuration.static) app.use(express.static(path.join(__dirname, `../../${page.configuration.static}`)));
-        app.get(page.configuration.path, (req, res) => page.send(client, req, res));
+        app.get(page.configuration.path, (req, res) => page.send(client, req, res, io));
         new Entry("load", `Webapp ${page.configuration.path}`).setColor("white", "black").log();
     });
 
