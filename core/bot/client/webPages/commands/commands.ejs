@@ -9,13 +9,11 @@
         <!-- Style links -->
         <link rel="stylesheet" type="text/css" href="./commands.css">
         <link rel="shortcut icon" href="<%= user.avatarURL %>" type="image/x-icon">
-        <!-- Script links -->
-        <script src="./commands.js"></script>
     </head>
     <body>
         <header>
-            <h2>Home</h2>
-            <h2>Commands</h2>
+            <h2><a id="homeURL">Home</a></h2>
+            <h2><a id="commandsURL">Commands</a></h2>
         </header>
         <main>
             <h1>Commands</h1>
@@ -44,6 +42,6 @@
             <h6><a href="https://discord.com/api/oauth2/authorize?client_id=<%= user.id %>&permissions=8&scope=bot%20applications.commands" target="_blank" rel="noopener noreferrer">Invite</a></h6>
         </footer>
         <!-- Scripts -->
-        <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+        <script src="./commands.js"></script>
     </body>
 </html>
