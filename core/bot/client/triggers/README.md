@@ -8,7 +8,7 @@ const discord = require("discord.js");
  * @param {discord.Client} client - The client
  * @param {discord.Message} message - The message
  */
-function conditions(client, message, args) {
+function conditions(client, message) {
     if (/*CONDITION ==*/ true) return true;
     else return false;
 };
@@ -18,7 +18,7 @@ function conditions(client, message, args) {
  * @param {discord.Client} client - The client.
  * @param {discord.Message} message - The message.
  */
-function run(client, message, argsient) {
+function run(client, message) {
     // CODE
 };
 
