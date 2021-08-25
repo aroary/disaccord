@@ -17,10 +17,4 @@ function send(client, req, res) {
     new Entry("webapp", req.url).setColor("brown").log();
 };
 
-module.exports = {
-    configuration: {
-        path: ["/commands"],
-        static: "core/bot/client/webPages/commands"
-    },
-    send
-};
+module.exports = { configuration: { path: ["/commands"], static: "core/bot/client/webPages/commands" }, send };
