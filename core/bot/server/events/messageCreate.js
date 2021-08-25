@@ -17,7 +17,7 @@ function run(client, message) {
         const command = args.shift().toLowerCase().slice(client.secrets.prefix.length);
 
         const execute = client.commands.get(command) || client.commands.get(client.aliases.get(command));
-        if (execute && (execute.config.available || client.secrets.developers.includes(message.author.id))) {
+        if (execute && (execute.config.available || client.secrets.developer.includes(message.author.id.toString()))) {
             if (message.guild && !checkPermissions(message.channel, message.guild.me, message.member, execute.config.permission)) {
                 if ((message.guild && execute.config.server) || (!message.guild && execute.config.direct)) {
                     execute.run(client, message, args);
@@ -53,7 +53,7 @@ function run(client, message) {
 
     // Check for triggers.
     client.triggers.forEach(trigger => {
-        if (trigger.execute.conditions(client, message) && (trigger.config.available || client.secrets.developers.includes(message.author.id))) {
+        if (trigger.execute.conditions(client, message) && (trigger.config.available || client.secrets.developers.includes(message.author.id.toString()))) {
             const missing = checkPermissions(message.channel, message.guild.me, message.member, trigger.config.permissions);
             if (message.guild && !missing) {
                 if ((message.guild && trigger.config.server) || (!message.guild && trigger.config.direct)) {
