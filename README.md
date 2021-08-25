@@ -10,6 +10,7 @@ ___
 ```json
 {
     "token": "TOKEN",
+    "clientSecret": "CLIENT_SECRET",
     "intents": ["INTENT"],
     "port": 3000,
     "redeploy": true,
@@ -17,10 +18,13 @@ ___
     "developer": ["DEVELOPER_ID"],
     "supportServer":"SUPPORT_SERVER_ID",
     "statusInterval": 350000,
+    "description": "",
+    "repository": "USER_NAME/REPOSITORY_NAME",
     "version": "3.0.1"
 }
 ```
-* **`token`**: *`String`* The bots login *token*.
+* **`token`**: *`String`* The bots login *token* (Generated from the discord [developer portal](https://discord.com/developers/applications)).
+* **`clientSecret`**: *`String`* The bots *client secret* (Generated from the discord [developer portal](https://discord.com/developers/applications)).
 * **`intents`**: *`Array`* The bots *intent*s.
 * **`port`**: *`Integer`* The *port* number your bots app will listen at (defults `80`, `443`).
 * **`reDeploy`**: *`Boolean`* Weather or not to reregister the slash commands.
@@ -28,6 +32,8 @@ ___
 * **`developer`**: *`Array`* The *developers* of the bot.
 * **`supportServer`**: *`String`* The *ID* of the support server.
 * **`statusInterval`**: *`Number`* The *interval* to cycle to the next value in the *status* array.
+* **`description`**: *`String`* The *descrption* of the bot.
+* **`repository`**: *`String`* The [GitHub](https://github.com) *repository* of the bot.
 * **`version`**: *`String`* Ther version of your the bot.
 ## Requirements
 * [Node.js](https://nodejs.org/en/) `^14.17.5`
