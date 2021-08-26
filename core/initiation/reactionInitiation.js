@@ -27,7 +27,7 @@
  
          // Loop through the files and add each to the reactions array.
          files.forEach(file => {
-             const reaction = require(`../bot/client/reaction/${file}`);
+             const reaction = require(`../bot/client/reactions/${file}`);
              client.reactions.push(reaction);
              new Entry("load", `Reaction ${reaction.config.name}`).setColor("white", "black").log();
          });
