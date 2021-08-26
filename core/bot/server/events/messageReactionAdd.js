@@ -4,7 +4,7 @@ const Entry = require("../../../utilities/logger");
 /**
  * @description Handle reactions.
  * @param {discord.Client} client - The client.
- * @param {discord.MessageReaction} reaction - The message.
+ * @param {discord.MessageReaction} reaction - The reaction.
  * @param {discord.User} user - The user who reacted.
  */
 function run(client, reaction, user) {
