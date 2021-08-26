@@ -19,19 +19,8 @@ function run(client, message) {
         const execute = client.commands.get(command) || client.commands.get(client.aliases.get(command));
         if (execute && (execute.config.available || client.secrets.developer.includes(message.author.id.toString()))) {
             if (message.guild && !checkPermissions(message.channel, message.guild.me, message.member, execute.config.permission)) {
-                if ((message.guild && execute.config.server) || (!message.guild && execute.config.direct)) {
-                    execute.run(client, message, args);
-                    if (execute.config.log) new Entry("command", execute.config.name).setColor("purple").log();
-                } else {
-                    const badEmbed = new discord.MessageEmbed()
-                        .setAuthor(message.author.tag, message.author.avatarURL())
-                        .setTitle("Oops!")
-                        .setDescription("You cant do that here.")
-                        .setColor("RED")
-                        .setTimestamp();
-
-                    message.channel.send(badEmbed);
-                };
+                execute.run(client, message, args);
+                if (execute.config.log) new Entry("command", execute.config.name).setColor("purple").log();
             } else {
                 const missing = checkPermissions(message.guild.me, message.member, execute.config.permissions);
                 if (missing.client && !missing.client.includes("SEND_MESSAGES")) {
@@ -56,19 +45,8 @@ function run(client, message) {
         if (trigger.execute.conditions(client, message) && (trigger.config.available || client.secrets.developers.includes(message.author.id.toString()))) {
             const missing = checkPermissions(message.channel, message.guild.me, message.member, trigger.config.permissions);
             if (message.guild && !missing) {
-                if ((message.guild && trigger.config.server) || (!message.guild && trigger.config.direct)) {
-                    trigger.execute.run(client, message);
-                    if (trigger.config.log) new Entry("trigger", trigger.config.name).setColor("purple").log();
-                } else {
-                    const badEmbed = new discord.MessageEmbed()
-                        .setAuthor(message.author.tag, message.author.avatarURL())
-                        .setTitle("Oops!")
-                        .setDescription("You cant do that here.")
-                        .setColor("RED")
-                        .setTimestamp();
-
-                    message.channel.send({ embeds: [badEmbed] });
-                };
+                trigger.execute.run(client, message);
+                if (trigger.config.log) new Entry("trigger", trigger.config.name).setColor("purple").log();
             } else {
                 if (missing.client && !missing.client.includes("SEND_MESSAGES")) {
                     var missingMessage = "";

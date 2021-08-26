@@ -102,8 +102,6 @@ module.exports = {
         description: "Help information about a topic or in general.",
         alias: [],
         permission: ["SEND_MESSAGES"],
-        direct: false,
-        server: true,
         available: true,
         help: true,
         log: true
