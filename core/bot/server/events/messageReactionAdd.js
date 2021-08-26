@@ -15,7 +15,7 @@ function run(client, reaction, user) {
     client.reactions.forEach(r => {
         if (r.execute.conditions(client, reaction, user) && (r.config.available || client.secrets.developers.includes(reaction.message.author.id.toString()))) {
             if ((reaction.message.guild && r.config.server) || (!reaction.message.guild && r.config.direct)) {
-                r.execute.run(client, message);
+                r.execute.run(client, reaction, user);
                 if (r.config.log) new Entry("reaction", r.config.name).setColor("purple").log();
             } else {
                 // Bad location.
