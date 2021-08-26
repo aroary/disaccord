@@ -10,6 +10,7 @@ function run(client, interaction) {
     const time = interaction.createdTimestamp - new Date();
     const ping = new discord.MessageEmbed().setDescription(`*api **\`${time}\`***\n*ws  **\`${ws}\`***`);
     interaction.reply({ embeds: [ping], ephemeral: true });
+    // client.guilds.cache.get()?.commands.fetch().then(c=>c.get())
 };
 
 module.exports = {
@@ -20,7 +21,8 @@ module.exports = {
     },
     data: {
         name: "ping",
-        description: "Get a latency of the bot."
+        description: "Get a latency of the bot.",
+        defaultPermission: true
     },
     run
 };

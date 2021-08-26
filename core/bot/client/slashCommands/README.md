@@ -21,6 +21,7 @@ module.exports = {
     data: {
         name: "NAME",
         description: "DESCRIPTION",
+        defaultPermission: true,
         options: [
             {
                 name: "OPTION_ONE_INPUT",
