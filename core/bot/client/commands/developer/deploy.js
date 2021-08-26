@@ -79,8 +79,6 @@ module.exports = {
         description: "Deploy slash commands",
         alias: [],
         permission: ["SEND_MESSAGES"],
-        direct: false,
-        server: true,
         help: true,
         available: true,
         log: true

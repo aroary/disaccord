@@ -27,8 +27,6 @@ module.exports = {
         name: "NAME",
         description: "DESCRIPTION",
         permissions: ["SEND_MESSAGES"],
-        direct: false,
-        server: true,
         help: true,
         available: true,
         log: true
@@ -45,8 +43,6 @@ module.exports = {
     * **`name`**: *`String`* The name of the trigger (Not used to execute the trigger).
     * **`description`**: *`String`* The description of the trigger.
     * **`permissions`**: *`Array`* Ther permissions required to run the trigger (checks for each and for client and user).
-    * **`direct`**: *`Boolean`* Weather or not to allow the trigger to run in a direct channel.
-    * **`server`**: *`Boolean`* Weather or not to allow the trigger to run in a guild channel.
     * **`help`**: *`Boolean`* Weather or not to show in the help command.
     * **`available`**: *`Boolean`* Weather or not to allow everyone to use the trigger.
     * **`log`**: *`Boolean`* Weather or not to log the triggers usage.

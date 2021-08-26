@@ -33,8 +33,6 @@ module.exports = {
         name: "@bot",
         description: "Send a description of the bot.",
         permissions: ["SEND_MESSAGES"],
-        direct: false,
-        server: true,
         help: true,
         available: true,
         log: true
