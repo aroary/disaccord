@@ -1,4 +1,4 @@
-# Buttons
+# Adding buttons
 #### Paste this code into a new file in the `core\bot\client\buttons` directory.
 ```js
 const discord = require("discord.js");
@@ -26,3 +26,15 @@ module.exports = {
     * **`NAME`** → Replace with the name of the button.
     * **`log`**: *`Boolean`* Weather or not to log the buttons usage.
 * **`run`**: *`Function`* The Function to run when the button is pressed.
+___
+## Creating a button component
+#### Paste this code where you want to create your button
+```js
+const row = new MessageActionRow()
+			.addComponents(
+				new MessageButton()
+					.setCustomId('primary')
+					.setLabel('Primary')
+					.setStyle('PRIMARY'),
+			);
+```
