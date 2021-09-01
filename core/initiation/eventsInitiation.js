@@ -16,7 +16,7 @@ const Entry = require("../utilities/logger");
 function loadEvents(client) {
     fs.readdir('core/bot/server/events', (error, files) => {
         // Terminate loading process if there is an error.
-        if (error) return new Entry().setName("error").setValue(error).setColor({ backGround: "red" }).log();
+        if (error) return new Entry().setName("error").setValue(error).setColor("red").log();
         
         // Loop through relevant files.
         const eventFiles = files.filter(file => file.split('.').pop() === 'js');

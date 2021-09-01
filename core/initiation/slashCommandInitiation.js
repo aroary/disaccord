@@ -20,7 +20,7 @@ function initiateSlashCommands(client) {
     // Read slashcommand folder.
     fs.readdir("core/bot/client/slashCommands", (error, files) => {
         // Terminate loading process if there is an error.
-        if (error) return new Entry().setName("error").setValue(error).setColor({backGround: "red"}).log();
+        if (error) return new Entry().setName("error").setValue(error).setColor("red").log();
 
         // Loop through the files.
         const slashFiles = files.filter(file => file.split(".").pop() === "js");
