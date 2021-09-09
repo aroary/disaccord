@@ -3,7 +3,7 @@
 [![Discord](https://img.shields.io/discord/854114095929491456.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/BHtNSq5bq2)
 # Disaccord
 ## Getting started
-#### Fill in this inforamtion in the `/.secrets.json` file.
+#### Fill in this inforamtion in the `/.secrets.json` file. (most information is required to run the bot)
 ```json
 {
     "token": "TOKEN",
