@@ -53,3 +53,4 @@ ___
 * [selectMenus](https://github.com/aroary/disaccord/blob/master/core/bot/client/selectMenus/README.md)
 * [commands](https://github.com/aroary/disaccord/blob/master/core/bot/client/commands/README.md)
 * [buttons](https://github.com/aroary/disaccord/blob/master/core/bot/client/buttons#readme)
+###### [back to top](#disaccord)
